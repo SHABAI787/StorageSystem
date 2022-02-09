@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace ASPController.Controllers
 {
@@ -15,9 +17,17 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
-        public string Hello(string name)
+        public async Task<string> Hello(string name)
         {
-            return $"Hello {name}";
+            //string userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<string>(name));
+            TestData userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<TestData>(name));
+            return await Task.Factory.StartNew(() => JsonConvert.SerializeObject($"Hello {userNmae.Name}"));
         }
+    }
+
+    [Serializable]
+    public class TestData
+    {
+        public string Name { get; set; }
     }
 }
