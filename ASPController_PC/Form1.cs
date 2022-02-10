@@ -22,12 +22,12 @@ namespace ASPController_PC
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            TestData testData = new TestData();
-            testData.Name = textBoxName.Text;
+            //TestData testData = new TestData();
+            //testData.Name = textBoxName.Text;
 
-            string JSONData = await Task.Run(() => JsonConvert.SerializeObject(testData));
+            string JSONData = await Task.Run(() => JsonConvert.SerializeObject(textBoxName.Text));
 
-            WebRequest request = WebRequest.Create($"https://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
+            WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
             request.Method = "POST";
             string query = $"name={JSONData}";
             byte[] byteMsg = Encoding.UTF8.GetBytes(query);

@@ -19,9 +19,9 @@ namespace ASPController.Controllers
         [HttpPost]
         public async Task<string> Hello(string name)
         {
-            //string userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<string>(name));
-            TestData userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<TestData>(name));
-            return await Task.Factory.StartNew(() => JsonConvert.SerializeObject($"Hello {userNmae.Name}"));
+            string userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<string>(name));
+            //TestData userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<TestData>(name));
+            return await Task.Factory.StartNew(() => JsonConvert.SerializeObject($"Hello {userNmae}"));
         }
     }
 
