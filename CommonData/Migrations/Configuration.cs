@@ -14,10 +14,21 @@
 
         protected override void Seed(CommonData.ContextBD context)
         {
-            //  This method will be called after migrating to the latest version.
+            try
+            {
+                if(context.ProductStates.Count() == 0)
+                {
+                    context.ProductStates.Add(new ProductState() { Name = "Отсутствует" });
+                    context.ProductStates.Add(new ProductState() { Name = "В наличии" });
+                    context.ProductStates.Add(new ProductState() { Name = "Забронирован" });
+                    context.ProductStates.Add(new ProductState() { Name = "В пути" });
+                }
+            }
+            catch (Exception)
+            {
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+                throw;
+            }
         }
     }
 }
