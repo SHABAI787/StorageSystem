@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
+using CommonData;
 
 namespace ASPController_PC
 {
@@ -22,14 +23,23 @@ namespace ASPController_PC
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            //TestData testData = new TestData();
-            //testData.Name = textBoxName.Text;
+            UserBD userBD = new UserBD();
+            Person person = new Person();
+            userBD.Login = "nik";
+            userBD.Password = "pas";
+            userBD.Person = person;
+            person.LastName = "LastName";
+            person.Name = "Name";
+            person.MiddleName = "MiddleName";
+            person.PhoneNumber = "+792435698585";
 
-            string JSONData = await Task.Run(() => JsonConvert.SerializeObject(textBoxName.Text));
 
-            WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
+            string JSONData = await Task.Run(() => JsonConvert.SerializeObject(userBD));
+
+            //WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
+            WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/AddUserBD");
             request.Method = "POST";
-            string query = $"name={JSONData}";
+            string query = $"userBD={JSONData}";
             byte[] byteMsg = Encoding.UTF8.GetBytes(query);
 
             request.ContentType = "application/x-www-form-urlencoded";
