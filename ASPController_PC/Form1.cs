@@ -37,7 +37,7 @@ namespace ASPController_PC
             string JSONData = await Task.Run(() => JsonConvert.SerializeObject(userBD));
 
             //WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
-            WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/AddUserBD");
+            WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}/{textBoxPort.Text}/Home/AddUserBD");
             request.Method = "POST";
             string query = $"userBD={JSONData}";
             byte[] byteMsg = Encoding.UTF8.GetBytes(query);
