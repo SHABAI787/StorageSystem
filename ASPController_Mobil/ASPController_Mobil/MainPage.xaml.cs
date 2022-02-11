@@ -15,10 +15,16 @@ namespace ASPController_Mobil
 {
     public partial class MainPage : ContentPage
     {
-        private static readonly HttpClient client = new HttpClient();
-        private readonly string testURL = "http://192.168.0.8/ASPController/Home/Hello";
         //private readonly string testURL = "http://192.168.1.32/Home/Hello";
         //private readonly string testURL = $"http://localhost:44332/Home/Hello";
+
+        private static readonly HttpClient client = new HttpClient();
+        private readonly string URL = "http://90.188.45.208/ASPController/Home/Hello";
+
+        private string login = string.Empty;
+        private string password = string.Empty;
+
+        
         public MainPage()
         {
             InitializeComponent();
@@ -27,8 +33,9 @@ namespace ASPController_Mobil
         int count = 0;
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
-            ((Button)sender).Text = $"You clicked {count} times.";
+            Indicator.IsVisible = true;
+            //count++;
+            //((Button)sender).Text = $"You clicked {count} times.";
 
             //Dictionary<string, string> dict = new Dictionary<string, string>()
             //{
@@ -39,10 +46,10 @@ namespace ASPController_Mobil
             //HttpResponseMessage response = await client.PostAsync(testURL, form);
             //string result = await response.Content.ReadAsStringAsync();
 
-            string JSONData = await Task.Run(() => JsonConvert.SerializeObject("NIKITA"));
+            string JSONData = await Task.Run(() => JsonConvert.SerializeObject($"Логин:{EditorLogin.Text} и Пароль:{EditorPassword.Text}"));
 
             //WebRequest request = WebRequest.Create($"http://{textBoxIP.Text}:{textBoxPort.Text}/Home/Hello");
-            WebRequest request = WebRequest.Create(testURL);
+            WebRequest request = WebRequest.Create(URL);
             request.Method = "POST";
             string query = $"name={JSONData}";
             byte[] byteMsg = Encoding.UTF8.GetBytes(query);
@@ -69,8 +76,19 @@ namespace ASPController_Mobil
 
             response.Close();
             string helloStr = await Task.Run(() => JsonConvert.DeserializeObject<string>(answer));
-
+            Indicator.IsVisible = false;
             await DisplayAlert("Результат", helloStr, "ОК");
+            await Navigation.PushAsync(new PageWork());
+        }
+
+        private void Editor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        } 
+        
+        private void Editor_PasswordTextChanged(object sender, TextChangedEventArgs e)
+        {
+           
         }
     }
 }

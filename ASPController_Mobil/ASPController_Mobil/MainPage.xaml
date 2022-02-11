@@ -5,21 +5,15 @@
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Система хранения" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Button Text="Click Me" Clicked="Button_Clicked" />
+        <Label Text="Добро пожаловать" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Заполните данные для авторизации" HorizontalTextAlignment="Center" FontSize="16" Padding="30,0,30,0"/>
+        <Editor x:Name="EditorLogin" Placeholder = "Login" FontSize="20" TextChanged="Editor_TextChanged" />
+        <Editor x:Name="EditorPassword" Placeholder = "Password" FontSize="20" TextChanged="Editor_PasswordTextChanged" />
+        <ActivityIndicator x:Name="Indicator" IsRunning="true" IsVisible="false" />
+        <Button Text="ВОЙТИ" CornerRadius ="20"  Clicked="Button_Clicked" />
+        <Label Text="Если вы забыли логин или пароль сообщите об этом системному администратору - 25-45-87" HorizontalTextAlignment="Center" FontSize="16" Padding="30,0,30,0"/>
     </StackLayout>
     
 
