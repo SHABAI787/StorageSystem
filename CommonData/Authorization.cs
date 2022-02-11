@@ -12,7 +12,11 @@ namespace CommonData
     public static class Authorization
     {
         public const string URL = "http://90.188.45.208/ASPController";
-        public static async Task<bool> StartAuthorization(string login, string password, string exception)
+        public static string Exception = string.Empty;
+        public static string Login = string.Empty;
+        public static string Name = string.Empty;
+
+        public static async Task<bool> StartAuthorization(string login, string password)
         {
             bool res = false;
             try
@@ -46,14 +50,18 @@ namespace CommonData
                 var result = await Task.Run(() => JsonConvert.DeserializeObject<(string Login, string Name, string Exception)>(answer));
 
                 if (!string.IsNullOrEmpty(result.Login))
+                {
                     res = true;
+                    Login = result.Login;
+                    Name = result.Name;
+                }
                 else
-                    exception = "Не верный логин или пароль";
+                    Exception = "Не верный логин или пароль";
 
             }
             catch (Exception ex)
             {
-                exception = ex.Message;
+                Exception = ex.Message;
             }
 
             return res;

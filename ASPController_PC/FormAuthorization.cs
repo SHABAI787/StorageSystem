@@ -23,11 +23,10 @@ namespace ASPController_PC
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string ex = string.Empty;
-            if(CommonData.Authorization.StartAuthorization(textBoxLogin.Text, textBoxPassword.Text, ex).Result)
+            if(await CommonData.Authorization.StartAuthorization(textBoxLogin.Text, textBoxPassword.Text))
                 MessageBox.Show("Успешно!");
             else
-                MessageBox.Show(ex);
+                MessageBox.Show(CommonData.Authorization.Exception);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
