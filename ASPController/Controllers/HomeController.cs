@@ -47,11 +47,28 @@ namespace ASPController.Controllers
           
             return await Task.Factory.StartNew(() => JsonConvert.SerializeObject(res));
         }
-    }
 
-    [Serializable]
-    public class TestData
-    {
-        public string Name { get; set; }
+        [HttpPost]
+        public async Task<string> Authorization(string data)
+        {
+            string res = string.Empty;
+            var parameters = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<(string Login, string Password)>(data));
+            parameters.Password = string.IsNullOrEmpty(parameters.Password) ? null : parameters.Password;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    if (!context.UsersBD.Any(u => u.Login == parameters.Login && u.Password == parameters.Password))
+                        res = "Не верный логин или пароль";
+                }
+            }
+            catch (Exception ex)
+            {
+                res = ex.Message;
+            }
+
+            return res;
+        }
+
     }
 }
