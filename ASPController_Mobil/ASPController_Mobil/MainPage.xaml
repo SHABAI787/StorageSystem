@@ -9,8 +9,8 @@
         </Frame>
         <Label Text="Добро пожаловать" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="Заполните данные для авторизации" HorizontalTextAlignment="Center" FontSize="16" Padding="30,0,30,0"/>
-        <Editor x:Name="EditorLogin" Placeholder = "Login" FontSize="20" TextChanged="Editor_TextChanged" />
-        <Editor x:Name="EditorPassword" Placeholder = "Password" FontSize="20" TextChanged="Editor_PasswordTextChanged" />
+        <Editor x:Name="EditorLogin" Margin="10" Placeholder = "Login" Text="nik" FontSize="20" TextChanged="Editor_TextChanged" />
+        <Entry  x:Name="EntryPassword" Margin="10" IsPassword="True" Text="pas"  Placeholder = "Password" FontSize="20" TextChanged="Editor_PasswordTextChanged" />
         <ActivityIndicator x:Name="Indicator" IsRunning="true" IsVisible="false" />
         <Button Text="ВОЙТИ" CornerRadius ="20"  Clicked="Button_Clicked" />
         <Label Text="Если вы забыли логин или пароль сообщите об этом системному администратору - 25-45-87" HorizontalTextAlignment="Center" FontSize="16" Padding="30,0,30,0"/>

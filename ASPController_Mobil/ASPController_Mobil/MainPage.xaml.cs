@@ -26,10 +26,14 @@ namespace ASPController_Mobil
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Indicator.IsVisible = true;
-            bool res = await Authorization.StartAuthorization(EditorLogin.Text, EditorPassword.Text);
+            bool res = await Authorization.StartAuthorization(EditorLogin.Text, EntryPassword.Text);
             Indicator.IsVisible = false;
             if (res)
-                await Navigation.PushAsync(new PageWork());
+            {
+                await Navigation.PushAsync(new TabbedPage1());
+                EditorLogin.Text = "";
+                EntryPassword.Text = "";
+            }
             else
                 await DisplayAlert("Результат", Authorization.Exception, "ОК");
         }
