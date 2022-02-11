@@ -48,6 +48,11 @@ namespace ASPController.Controllers
             return await Task.Factory.StartNew(() => JsonConvert.SerializeObject(res));
         }
 
+        /// <summary>
+        /// Авторизация. Возвращает кортеж (логин, имя, описание ошибки)
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<string> Authorization(string data)
         {
@@ -58,13 +63,16 @@ namespace ASPController.Controllers
             {
                 using (ContextBD context = new ContextBD())
                 {
-                    if (!context.UsersBD.Any(u => u.Login == parameters.Login && u.Password == parameters.Password))
-                        res = "Не верный логин или пароль";
+                    UserBD user = context.UsersBD.FirstOrDefault(u => u.Login == parameters.Login && u.Password == parameters.Password && u.Enabled);
+                    if(user == null)
+                        res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((string.Empty, string.Empty, "Не верный логин или пароль")));
+                    else
+                        res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((user.Login, user.Person?.Name, string.Empty)));
                 }
             }
             catch (Exception ex)
             {
-                res = ex.Message;
+                res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((string.Empty, string.Empty, ex.Message)));
             }
 
             return res;
