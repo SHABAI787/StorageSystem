@@ -108,6 +108,82 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> GetPosts(string data)
+        {
+            (List<Post> List, string Error) res = (new List<Post>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.List = context.Posts.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> GetProviders(string data)
+        {
+            (List<Provider> List, string Error) res = (new List<Provider>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.List = context.Providers.Include("Responsible").Include("Responsible.Post").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> GetStores(string data)
+        {
+            (List<Store> List, string Error) res = (new List<Store>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.List = context.Stores.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> GetUsersBD(string data)
+        {
+            (List<UserBD> List, string Error) res = (new List<UserBD>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.List = context.UsersBD.Include("Person").Include("Person.Post").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
         public async Task<(string Products, string Error)> AddProducts(string data)
         {
             (string Products, string Error) res = ("", "");

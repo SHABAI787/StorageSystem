@@ -11,8 +11,11 @@ namespace CommonData
 {
     public static class Authorization
     {
-        //public const string URL = "http://90.188.45.208/ASPController";
+#if DEBUG
         public const string URL = "http://localhost:44332";
+#else
+        public const string URL = "http://90.188.45.208/ASPController";
+#endif
         public static string Exception = string.Empty;
         public static string Login = string.Empty;
         public static string Name = string.Empty;

@@ -60,6 +60,10 @@ namespace ASPController_PC
             toolStripButtonUpdateProduct_Click(sender, e);
             toolStripButtonUpdateOrder_Click(sender, e);
             toolStripButtonUpdatePerson_Click(sender, e);
+            toolStripButtonUpdatePost_Click(sender, e);
+            toolStripButtonUpdateProvider_Click(sender, e);
+            toolStripButtonUpdateStore_Click(sender, e);
+            toolStripButtonUpdateUsersBD_Click(sender, e);
         }
 
         private async void toolStripButtonUpdateOrder_Click(object sender, EventArgs e)
@@ -76,6 +80,38 @@ namespace ASPController_PC
             dataGridViewPersons.DataSource = new ObservableCollection<Person>(data).ToBindingList();
             if (!string.IsNullOrEmpty(Person.GetException()))
                 MessageBox.Show(Person.GetException());
+        }
+
+        private async void toolStripButtonUpdatePost_Click(object sender, EventArgs e)
+        {
+            var data = await Post.GetPosts();
+            dataGridViewPosts.DataSource = new ObservableCollection<Post>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(Post.GetException()))
+                MessageBox.Show(Post.GetException());
+        }
+
+        private async void toolStripButtonUpdateProvider_Click(object sender, EventArgs e)
+        {
+            var data = await Provider.GetProviders();
+            dataGridViewProviders.DataSource = new ObservableCollection<Provider>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(Provider.GetException()))
+                MessageBox.Show(Provider.GetException());
+        }
+
+        private async void toolStripButtonUpdateStore_Click(object sender, EventArgs e)
+        {
+            var data = await Store.GetStores();
+            dataGridViewStores.DataSource = new ObservableCollection<Store>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(Store.GetException()))
+                MessageBox.Show(Store.GetException());
+        }
+
+        private async void toolStripButtonUpdateUsersBD_Click(object sender, EventArgs e)
+        {
+            var data = await UserBD.GetusersBD();
+            dataGridViewUsersBD.DataSource = new ObservableCollection<UserBD>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(UserBD.GetException()))
+                MessageBox.Show(UserBD.GetException());
         }
     }
 }

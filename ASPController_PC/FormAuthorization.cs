@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using System.Net;
-using System.IO;
-using CommonData;
 
 namespace ASPController_PC
 {
     public partial class FormAuthorization : Form
     {
+        private bool anim = true;
         public FormAuthorization()
         {
             InitializeComponent();
@@ -23,13 +15,35 @@ namespace ASPController_PC
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if(await CommonData.Authorization.StartAuthorization(textBoxLogin.Text, textBoxPassword.Text))
+            Anim();
+            if (await CommonData.Authorization.StartAuthorization(textBoxLogin.Text, textBoxPassword.Text))
             {
+                anim = false;
                 new FormBase().Show();
                 this.Hide();
             }
             else
                 MessageBox.Show(CommonData.Authorization.Exception, "Авторизация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            anim = false;
+            progressBar1.Value = 0;
+        }
+
+        private async void Anim()
+        {
+            anim = true;
+            await Task.Run(() =>
+              {
+                  while (anim)
+                  {
+                      Thread.Sleep(100);
+                      progressBar1.Invoke((MethodInvoker)delegate
+                      {
+                          if (progressBar1.Value == 99)
+                              progressBar1.Value = 0;
+                          progressBar1.Value++;
+                      });
+                  }
+              });
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
