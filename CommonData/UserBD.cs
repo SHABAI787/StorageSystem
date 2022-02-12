@@ -19,7 +19,6 @@ namespace CommonData
     [Table("UsersBD")]
     public class UserBD
     {
-        [Browsable(false)]
         [Key]
         [DisplayName("Логин")]
         public string Login { get; set; }
