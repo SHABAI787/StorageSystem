@@ -18,10 +18,14 @@
             {
                 if(context.ProductStates.Count() == 0)
                 {
-                    context.ProductStates.Add(new ProductState() { Name = "Отсутствует" });
-                    context.ProductStates.Add(new ProductState() { Name = "В наличии" });
-                    context.ProductStates.Add(new ProductState() { Name = "Забронирован" });
-                    context.ProductStates.Add(new ProductState() { Name = "В пути" });
+                    context.ProductStates.Add(new ProductState() { Name = "Отсутствует" });//1
+                    context.ProductStates.Add(new ProductState() { Name = "В наличии" });//2
+                    context.ProductStates.Add(new ProductState() { Name = "Забронирован" });//3
+                    context.ProductStates.Add(new ProductState() { Name = "В пути" });//4
+                    context.ProductStates.Add(new ProductState() { Name = "Выполнен" });//5
+                    context.ProductStates.Add(new ProductState() { Name = "Отменён" });//6
+                    context.ProductStates.Add(new ProductState() { Name = "Необходимо уточнить" });//7
+                    context.ProductStates.Add(new ProductState() { Name = "На пункте выдачи" });//8
                 }
             }
             catch (Exception)

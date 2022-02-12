@@ -31,31 +31,40 @@ namespace ASPController_PC
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageOrders = new System.Windows.Forms.TabPage();
-            this.tabPagePersons = new System.Windows.Forms.TabPage();
-            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
-            this.tabPagePosts = new System.Windows.Forms.TabPage();
-            this.tabPageProducts = new System.Windows.Forms.TabPage();
-            this.tabPageProviders = new System.Windows.Forms.TabPage();
-            this.tabPageStores = new System.Windows.Forms.TabPage();
-            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
-            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonAddProduct = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonDeleteProduct = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonUpdateProduct = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchOrder = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.tabPagePersons = new System.Windows.Forms.TabPage();
+            this.tabPagePosts = new System.Windows.Forms.TabPage();
+            this.tabPageProducts = new System.Windows.Forms.TabPage();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddProduct = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDeleteProduct = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUpdateProduct = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSearchProduct = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.tabPageProviders = new System.Windows.Forms.TabPage();
+            this.tabPageStores = new System.Windows.Forms.TabPage();
+            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUpdatePerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSearchPerson = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPageOrders.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
-            this.tabPageProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
-            this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
+            this.tabPagePersons.SuspendLayout();
+            this.tabPageProducts.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            this.toolStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersons)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,23 +96,65 @@ namespace ASPController_PC
             this.tabPageOrders.Text = "Заказы\\Брони";
             this.tabPageOrders.UseVisualStyleBackColor = true;
             // 
-            // tabPagePersons
+            // toolStrip1
             // 
-            this.tabPagePersons.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePersons.Name = "tabPagePersons";
-            this.tabPagePersons.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePersons.Size = new System.Drawing.Size(792, 424);
-            this.tabPagePersons.TabIndex = 1;
-            this.tabPagePersons.Text = "Физ.лица";
-            this.tabPagePersons.UseVisualStyleBackColor = true;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddOrder,
+            this.toolStripButtonDeleteOrder,
+            this.toolStripButtonUpdateOrder,
+            this.toolStripButtonSearchOrder});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(786, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonAddOrder
+            // 
+            this.toolStripButtonAddOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddOrder.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddOrder.Name = "toolStripButtonAddOrder";
+            this.toolStripButtonAddOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddOrder.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDeleteOrder
+            // 
+            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
+            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
+            // 
+            // toolStripButtonUpdateOrder
+            // 
+            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
+            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
+            this.toolStripButtonUpdateOrder.Click += new System.EventHandler(this.toolStripButtonUpdateOrder_Click);
+            // 
+            // toolStripButtonSearchOrder
+            // 
+            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
+            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
             // 
             // dataGridViewOrders
             // 
             this.dataGridViewOrders.AllowUserToAddRows = false;
             this.dataGridViewOrders.AllowUserToDeleteRows = false;
+            this.dataGridViewOrders.AllowUserToOrderColumns = true;
             this.dataGridViewOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOrders.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrders.Location = new System.Drawing.Point(0, 31);
@@ -112,6 +163,18 @@ namespace ASPController_PC
             this.dataGridViewOrders.ShowEditingIcon = false;
             this.dataGridViewOrders.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewOrders.TabIndex = 1;
+            // 
+            // tabPagePersons
+            // 
+            this.tabPagePersons.Controls.Add(this.toolStrip3);
+            this.tabPagePersons.Controls.Add(this.dataGridViewPersons);
+            this.tabPagePersons.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePersons.Name = "tabPagePersons";
+            this.tabPagePersons.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePersons.Size = new System.Drawing.Size(792, 424);
+            this.tabPagePersons.TabIndex = 1;
+            this.tabPagePersons.Text = "Физ.лица";
+            this.tabPagePersons.UseVisualStyleBackColor = true;
             // 
             // tabPagePosts
             // 
@@ -132,51 +195,6 @@ namespace ASPController_PC
             this.tabPageProducts.TabIndex = 3;
             this.tabPageProducts.Text = "Товары";
             this.tabPageProducts.UseVisualStyleBackColor = true;
-            // 
-            // tabPageProviders
-            // 
-            this.tabPageProviders.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProviders.Name = "tabPageProviders";
-            this.tabPageProviders.Size = new System.Drawing.Size(792, 424);
-            this.tabPageProviders.TabIndex = 4;
-            this.tabPageProviders.Text = "Поставщики";
-            this.tabPageProviders.UseVisualStyleBackColor = true;
-            // 
-            // tabPageStores
-            // 
-            this.tabPageStores.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStores.Name = "tabPageStores";
-            this.tabPageStores.Size = new System.Drawing.Size(792, 424);
-            this.tabPageStores.TabIndex = 5;
-            this.tabPageStores.Text = "Склады";
-            this.tabPageStores.UseVisualStyleBackColor = true;
-            // 
-            // tabPageUsersBD
-            // 
-            this.tabPageUsersBD.Location = new System.Drawing.Point(4, 22);
-            this.tabPageUsersBD.Name = "tabPageUsersBD";
-            this.tabPageUsersBD.Size = new System.Drawing.Size(792, 424);
-            this.tabPageUsersBD.TabIndex = 6;
-            this.tabPageUsersBD.Text = "Пользователи";
-            this.tabPageUsersBD.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewProducts
-            // 
-            this.dataGridViewProducts.AllowUserToAddRows = false;
-            this.dataGridViewProducts.AllowUserToDeleteRows = false;
-            this.dataGridViewProducts.AllowUserToOrderColumns = true;
-            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewProducts.Name = "dataGridViewProducts";
-            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.ShowEditingIcon = false;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewProducts.TabIndex = 4;
             // 
             // toolStrip2
             // 
@@ -233,54 +251,122 @@ namespace ASPController_PC
             this.toolStripButtonSearchProduct.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchProduct.Text = "toolStripButton4";
             // 
-            // toolStrip1
+            // dataGridViewProducts
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddOrder,
-            this.toolStripButtonDeleteOrder,
-            this.toolStripButtonUpdateOrder,
-            this.toolStripButtonSearchOrder});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
+            this.dataGridViewProducts.AllowUserToAddRows = false;
+            this.dataGridViewProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewProducts.AllowUserToOrderColumns = true;
+            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProducts.ShowEditingIcon = false;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewProducts.TabIndex = 4;
             // 
-            // toolStripButtonAddOrder
+            // tabPageProviders
             // 
-            this.toolStripButtonAddOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddOrder.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddOrder.Name = "toolStripButtonAddOrder";
-            this.toolStripButtonAddOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddOrder.Text = "toolStripButton1";
+            this.tabPageProviders.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProviders.Name = "tabPageProviders";
+            this.tabPageProviders.Size = new System.Drawing.Size(792, 424);
+            this.tabPageProviders.TabIndex = 4;
+            this.tabPageProviders.Text = "Поставщики";
+            this.tabPageProviders.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonDeleteOrder
+            // tabPageStores
             // 
-            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
-            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
+            this.tabPageStores.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStores.Name = "tabPageStores";
+            this.tabPageStores.Size = new System.Drawing.Size(792, 424);
+            this.tabPageStores.TabIndex = 5;
+            this.tabPageStores.Text = "Склады";
+            this.tabPageStores.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonUpdateOrder
+            // tabPageUsersBD
             // 
-            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
-            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
+            this.tabPageUsersBD.Location = new System.Drawing.Point(4, 22);
+            this.tabPageUsersBD.Name = "tabPageUsersBD";
+            this.tabPageUsersBD.Size = new System.Drawing.Size(792, 424);
+            this.tabPageUsersBD.TabIndex = 6;
+            this.tabPageUsersBD.Text = "Пользователи";
+            this.tabPageUsersBD.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonSearchOrder
+            // toolStrip3
             // 
-            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
-            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
+            this.toolStrip3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip3.AutoSize = false;
+            this.toolStrip3.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddPerson,
+            this.toolStripButtonDelPerson,
+            this.toolStripButtonUpdatePerson,
+            this.toolStripButtonSearchPerson});
+            this.toolStrip3.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip3.TabIndex = 7;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // toolStripButtonAddPerson
+            // 
+            this.toolStripButtonAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddPerson.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddPerson.Name = "toolStripButtonAddPerson";
+            this.toolStripButtonAddPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddPerson.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDelPerson
+            // 
+            this.toolStripButtonDelPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelPerson.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
+            this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelPerson.Text = "toolStripButton2";
+            // 
+            // toolStripButtonUpdatePerson
+            // 
+            this.toolStripButtonUpdatePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdatePerson.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdatePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdatePerson.Name = "toolStripButtonUpdatePerson";
+            this.toolStripButtonUpdatePerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
+            this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
+            // 
+            // toolStripButtonSearchPerson
+            // 
+            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
+            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
+            // 
+            // dataGridViewPersons
+            // 
+            this.dataGridViewPersons.AllowUserToAddRows = false;
+            this.dataGridViewPersons.AllowUserToDeleteRows = false;
+            this.dataGridViewPersons.AllowUserToOrderColumns = true;
+            this.dataGridViewPersons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewPersons.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPersons.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPersons.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewPersons.Name = "dataGridViewPersons";
+            this.dataGridViewPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPersons.ShowEditingIcon = false;
+            this.dataGridViewPersons.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewPersons.TabIndex = 6;
             // 
             // FormBase
             // 
@@ -295,13 +381,17 @@ namespace ASPController_PC
             this.tabControl1.ResumeLayout(false);
             this.tabPageOrders.ResumeLayout(false);
             this.tabPageOrders.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
-            this.tabPageProducts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
+            this.tabPagePersons.ResumeLayout(false);
+            this.tabPageProducts.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersons)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,5 +417,11 @@ namespace ASPController_PC
         private System.Windows.Forms.ToolStripButton toolStripButtonDeleteProduct;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdateProduct;
         private System.Windows.Forms.ToolStripButton toolStripButtonSearchProduct;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddPerson;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelPerson;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUpdatePerson;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSearchPerson;
+        private System.Windows.Forms.DataGridView dataGridViewPersons;
     }
 }

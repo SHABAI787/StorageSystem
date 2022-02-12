@@ -58,6 +58,24 @@ namespace ASPController_PC
         private void FormBase_Load(object sender, EventArgs e)
         {
             toolStripButtonUpdateProduct_Click(sender, e);
+            toolStripButtonUpdateOrder_Click(sender, e);
+            toolStripButtonUpdatePerson_Click(sender, e);
+        }
+
+        private async void toolStripButtonUpdateOrder_Click(object sender, EventArgs e)
+        {
+            var data = await Order.GetOrders();
+            dataGridViewOrders.DataSource = new ObservableCollection<Order>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(Order.GetException()))
+                MessageBox.Show(Order.GetException());
+        }
+
+        private async void toolStripButtonUpdatePerson_Click(object sender, EventArgs e)
+        {
+            var data = await Person.GetPersons();
+            dataGridViewPersons.DataSource = new ObservableCollection<Person>(data).ToBindingList();
+            if (!string.IsNullOrEmpty(Person.GetException()))
+                MessageBox.Show(Person.GetException());
         }
     }
 }

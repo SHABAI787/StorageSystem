@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using CommonData;
+using System.Data.Entity;
 
 namespace ASPController.Controllers
 {
@@ -14,7 +15,6 @@ namespace ASPController.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            
             return View("Default");
         }
 
@@ -57,6 +57,46 @@ namespace ASPController.Controllers
                 using (ContextBD context = new ContextBD())
                 {
                     res.Products = context.Products.Include("State").Include("Store").Include("Provider").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> GetOrders(string data)
+        {
+            (List<Order> Orders, string Error) res = (new List<Order>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                   res.Orders = context.Order.Include("State").Include("Person").Include("Person.Post").
+                        Include("Product").Include("Product.State").Include("Product.Store").
+                        Include("Product.Provider").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> GetPersons(string data)
+        {
+            (List<Person> List, string Error) res = (new List<Person>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.List = context.Persons.Include("Post").ToList();
                 }
             }
             catch (Exception ex)
