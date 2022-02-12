@@ -22,7 +22,6 @@ namespace ASPController_Mobil
             InitializeComponent();
         }
 
-        int count = 0;
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Indicator.IsVisible = true;

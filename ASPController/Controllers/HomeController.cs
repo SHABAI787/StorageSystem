@@ -45,8 +45,49 @@ namespace ASPController.Controllers
                 res = ex.Message;
             }
           
-            return await Task.Factory.StartNew(() => JsonConvert.SerializeObject(res));
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
         }
+
+        [HttpPost]
+        public async Task<string> GetProducts(string data)
+        {
+            (List<Product> Products, string Error) res = (new List<Product>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.Products = context.Products.Include("State").Include("Store").Include("Provider").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<(string Products, string Error)> AddProducts(string data)
+        {
+            (string Products, string Error) res = ("", "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var products = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Product>>(data));
+                    context.Products.AddRange(products);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return res;
+        }
+
 
         /// <summary>
         /// Авторизация. Возвращает кортеж (логин, имя, описание ошибки)

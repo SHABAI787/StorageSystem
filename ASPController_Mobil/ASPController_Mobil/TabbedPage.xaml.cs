@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,46 +22,12 @@ namespace ASPController_Mobil
         public TabbedPage1()
         {
             InitializeComponent();
+            Load();
+        }
 
-            ProductState productState = new ProductState();
-            productState.Name = "В наличии";
-            productState.Id = 2;
-            ProductState productState2 = new ProductState();
-            productState2.Name = "Отсутствует";
-            productState2.Id = 1;
-
-            productBase = new List<Product>
-            {
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Galaxy S8", State=productState, Price=48000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="Huawei P10", State=productState2, Price=35000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="HTC U Ultra", State=productState, Price=42000 },
-                new Product {Name="iPhone 7", State=productState2, Price=52000 }
-            };
-            
+        private async void Load()
+        {
+            productBase = await Product.GetProducts();
             SetItems(productBase);
         }
 
@@ -170,6 +140,57 @@ namespace ASPController_Mobil
 
         [DisplayName("Описание")]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Получить товар с сервера
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<List<Product>> GetProducts()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                string JSONData = await Task.Run(() => JsonConvert.SerializeObject("testData"));
+                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/GetProducts");
+                request.Method = "POST";
+                string query = $"data={JSONData}";
+                byte[] byteMsg = Encoding.UTF8.GetBytes(query);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = byteMsg.Length;
+
+                using (Stream stream = await request.GetRequestStreamAsync())
+                {
+                    await stream.WriteAsync(byteMsg, 0, byteMsg.Length);
+                }
+
+                WebResponse response = await request.GetResponseAsync();
+
+                string answer = null;
+
+                using (Stream s = response.GetResponseStream())
+                {
+                    using (StreamReader sR = new StreamReader(s))
+                    {
+                        answer = await sR.ReadToEndAsync();
+                    }
+                }
+
+                response.Close();
+                var result = await Task.Run(() => JsonConvert.DeserializeObject<(List<Product> Products, string Error)>(answer));
+
+                if (string.IsNullOrEmpty(result.Error))
+                {
+                    products = result.Products;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return products;
+        }
     }
 
     [Serializable]
