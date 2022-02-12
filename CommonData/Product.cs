@@ -18,6 +18,9 @@ namespace CommonData
     [Table("Products")]
     public class Product
     {
+        private static string exception = string.Empty;
+
+        [Browsable(false)]
         [DisplayName("Идентификатор")]
         public int Id { get; set; }
 
@@ -41,6 +44,11 @@ namespace CommonData
 
         [DisplayName("Описание")]
         public string Description { get; set; }
+
+        public static string GetException()
+        {
+            return exception;
+        }
 
         public static async Task<List<Product>> GetProducts()
         {
@@ -83,7 +91,7 @@ namespace CommonData
             }
             catch (Exception ex)
             {
-                
+                exception = ex.Message;
             }
 
             return products;

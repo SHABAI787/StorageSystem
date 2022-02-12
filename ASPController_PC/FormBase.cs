@@ -1,8 +1,10 @@
 ﻿using CommonData;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +20,44 @@ namespace ASPController_PC
             InitializeComponent();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void toolStripButtonAddProduct_Click_1(object sender, EventArgs e)
         {
-            var ds = await Product.GetProducts();
-            int d = 0;
+            
+        }
+
+        private async void toolStripButtonUpdateProduct_Click(object sender, EventArgs e)
+        {
+            var products = await Product.GetProducts();
+            dataGridViewProducts.DataSource = new ObservableCollection<Product>(products).ToBindingList();
+            if(!string.IsNullOrEmpty(Product.GetException()))
+                MessageBox.Show(Product.GetException());
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabControl tabControl = sender as TabControl;
+            switch (tabControl.SelectedTab.Name)
+            {
+                case "tabPageOrders":  break;
+                case "tabPagePersons":  break;
+                case "tabPagePosts":  break;
+                case "tabPageProducts":  break;
+                case "tabPageProviders":  break;
+                case "tabPageStores":  break;
+                case "tabPageUsersBD":  break;
+                default:
+                    break;
+            }
+        }
+
+        private void FormBase_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormBase_Load(object sender, EventArgs e)
+        {
+            toolStripButtonUpdateProduct_Click(sender, e);
         }
     }
 }

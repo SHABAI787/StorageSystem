@@ -29,7 +29,7 @@ namespace ASPController_PC
                 this.Hide();
             }
             else
-                MessageBox.Show(CommonData.Authorization.Exception);
+                MessageBox.Show(CommonData.Authorization.Exception, "Авторизация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
