@@ -136,12 +136,36 @@ namespace ASPController_PC
         private void toolStripButtonDeleteOrder_Click(object sender, EventArgs e)
         {
             DeleteItem<Order>(dataGridViewOrders, toolStripButtonUpdateOrder_Click);
-            
         }
 
         private void toolStripButtonDelPerson_Click(object sender, EventArgs e)
         {
+            DeleteItem<Person>(dataGridViewPersons, toolStripButtonUpdatePerson_Click);
+        }
 
+        private void toolStripButtonDelPost_Click(object sender, EventArgs e)
+        {
+            DeleteItem<Post>(dataGridViewPosts, toolStripButtonUpdatePost_Click);
+        }
+
+        private void toolStripButtonDeleteProduct_Click(object sender, EventArgs e)
+        {
+            DeleteItem<Product>(dataGridViewProducts, toolStripButtonUpdateProduct_Click);
+        }
+
+        private void toolStripButtonDelProvider_Click(object sender, EventArgs e)
+        {
+            DeleteItem<Provider>(dataGridViewProviders, toolStripButtonUpdateProvider_Click);
+        }
+
+        private void toolStripButtonDelStore_Click(object sender, EventArgs e)
+        {
+            DeleteItem<Store>(dataGridViewStores, toolStripButtonUpdateStore_Click);
+        }
+
+        private void toolStripButtonDelUsersBD_Click(object sender, EventArgs e)
+        {
+            DeleteItem<UserBD>(dataGridViewUsersBD, toolStripButtonUpdateUsersBD_Click);
         }
     }
 }

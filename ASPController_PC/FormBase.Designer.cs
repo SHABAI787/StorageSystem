@@ -157,6 +157,7 @@ namespace ASPController_PC
             this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrders.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
+            this.dataGridViewOrders.ReadOnly = true;
             this.dataGridViewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewOrders.ShowEditingIcon = false;
             this.dataGridViewOrders.Size = new System.Drawing.Size(792, 393);
@@ -204,6 +205,7 @@ namespace ASPController_PC
             this.dataGridViewPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPersons.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewPersons.Name = "dataGridViewPersons";
+            this.dataGridViewPersons.ReadOnly = true;
             this.dataGridViewPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPersons.ShowEditingIcon = false;
             this.dataGridViewPersons.Size = new System.Drawing.Size(792, 393);
@@ -250,6 +252,7 @@ namespace ASPController_PC
             this.dataGridViewPosts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPosts.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewPosts.Name = "dataGridViewPosts";
+            this.dataGridViewPosts.ReadOnly = true;
             this.dataGridViewPosts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPosts.ShowEditingIcon = false;
             this.dataGridViewPosts.Size = new System.Drawing.Size(792, 393);
@@ -297,6 +300,7 @@ namespace ASPController_PC
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.ShowEditingIcon = false;
             this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
@@ -343,6 +347,7 @@ namespace ASPController_PC
             this.dataGridViewProviders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProviders.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewProviders.Name = "dataGridViewProviders";
+            this.dataGridViewProviders.ReadOnly = true;
             this.dataGridViewProviders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProviders.ShowEditingIcon = false;
             this.dataGridViewProviders.Size = new System.Drawing.Size(792, 393);
@@ -389,6 +394,7 @@ namespace ASPController_PC
             this.dataGridViewStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStores.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewStores.Name = "dataGridViewStores";
+            this.dataGridViewStores.ReadOnly = true;
             this.dataGridViewStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStores.ShowEditingIcon = false;
             this.dataGridViewStores.Size = new System.Drawing.Size(792, 393);
@@ -435,6 +441,7 @@ namespace ASPController_PC
             this.dataGridViewUsersBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsersBD.Location = new System.Drawing.Point(0, 31);
             this.dataGridViewUsersBD.Name = "dataGridViewUsersBD";
+            this.dataGridViewUsersBD.ReadOnly = true;
             this.dataGridViewUsersBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUsersBD.ShowEditingIcon = false;
             this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
@@ -524,6 +531,7 @@ namespace ASPController_PC
             this.toolStripButtonDelPost.Name = "toolStripButtonDelPost";
             this.toolStripButtonDelPost.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDelPost.Text = "toolStripButton2";
+            this.toolStripButtonDelPost.Click += new System.EventHandler(this.toolStripButtonDelPost_Click);
             // 
             // toolStripButtonUpdatePost
             // 
@@ -562,6 +570,7 @@ namespace ASPController_PC
             this.toolStripButtonDeleteProduct.Name = "toolStripButtonDeleteProduct";
             this.toolStripButtonDeleteProduct.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDeleteProduct.Text = "Удалить";
+            this.toolStripButtonDeleteProduct.Click += new System.EventHandler(this.toolStripButtonDeleteProduct_Click);
             // 
             // toolStripButtonUpdateProduct
             // 
@@ -608,6 +617,7 @@ namespace ASPController_PC
             this.toolStripButtonDelProvider.Name = "toolStripButtonDelProvider";
             this.toolStripButtonDelProvider.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDelProvider.Text = "toolStripButton2";
+            this.toolStripButtonDelProvider.Click += new System.EventHandler(this.toolStripButtonDelProvider_Click);
             // 
             // toolStripButtonUpdateProvider
             // 
@@ -645,6 +655,7 @@ namespace ASPController_PC
             this.toolStripButtonDelStore.Name = "toolStripButtonDelStore";
             this.toolStripButtonDelStore.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDelStore.Text = "toolStripButton2";
+            this.toolStripButtonDelStore.Click += new System.EventHandler(this.toolStripButtonDelStore_Click);
             // 
             // toolStripButtonUpdateStore
             // 
@@ -682,6 +693,7 @@ namespace ASPController_PC
             this.toolStripButtonDelUsersBD.Name = "toolStripButtonDelUsersBD";
             this.toolStripButtonDelUsersBD.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDelUsersBD.Text = "toolStripButton2";
+            this.toolStripButtonDelUsersBD.Click += new System.EventHandler(this.toolStripButtonDelUsersBD_Click);
             // 
             // toolStripButtonUpdateUsersBD
             // 

@@ -67,6 +67,31 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> DelProducts(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Product> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Product>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Products.Remove(context.Products.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
+        }
+
+        [HttpPost]
         public async Task<string> GetOrders(string data)
         {
             (List<Order> Orders, string Error) res = (new List<Order>(), "");
@@ -132,6 +157,31 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> DelPersons(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Person> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Person>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Persons.Remove(context.Persons.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
+        }
+
+        [HttpPost]
         public async Task<string> GetPosts(string data)
         {
             (List<Post> List, string Error) res = (new List<Post>(), "");
@@ -148,6 +198,31 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> DelPosts(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Post> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Post>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Posts.Remove(context.Posts.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
         }
 
         [HttpPost]
@@ -170,6 +245,31 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> DelProviders(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Provider> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Provider>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Providers.Remove(context.Providers.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
+        }
+
+        [HttpPost]
         public async Task<string> GetStores(string data)
         {
             (List<Store> List, string Error) res = (new List<Store>(), "");
@@ -189,6 +289,31 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> DelStores(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Store> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Store>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Stores.Remove(context.Stores.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
+        }
+
+        [HttpPost]
         public async Task<string> GetUsersBD(string data)
         {
             (List<UserBD> List, string Error) res = (new List<UserBD>(), "");
@@ -205,6 +330,31 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> DelUsersBD(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<UserBD> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<UserBD>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.UsersBD.Remove(context.UsersBD.FirstOrDefault(o => o.Login == delItem.Login));
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
         }
 
         [HttpPost]

@@ -17,7 +17,7 @@ namespace CommonData
     /// </summary>
     [Serializable]
     [Table("UsersBD")]
-    public class UserBD
+    public class UserBD:BaseDelete
     {
         [Key]
         [DisplayName("Логин")]
@@ -101,6 +101,50 @@ namespace CommonData
             }
 
             return lists;
+        }
+
+        public override async void Delete<T>(List<T> dataBoundItems, EventHandler eventHandler)
+        {
+            try
+            {
+                exceptionDel = string.Empty;
+                string JSONData = await Task.Run(() => JsonConvert.SerializeObject(dataBoundItems));
+                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/DelUsersBD");
+                request.Method = "POST";
+                string query = $"data={JSONData}";
+                byte[] byteMsg = Encoding.UTF8.GetBytes(query);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = byteMsg.Length;
+
+                using (Stream stream = await request.GetRequestStreamAsync())
+                {
+                    await stream.WriteAsync(byteMsg, 0, byteMsg.Length);
+                }
+
+                WebResponse response = await request.GetResponseAsync();
+
+                string answer = null;
+
+                using (Stream s = response.GetResponseStream())
+                {
+                    using (StreamReader sR = new StreamReader(s))
+                    {
+                        answer = await sR.ReadToEndAsync();
+                    }
+                }
+
+                response.Close();
+                var result = await Task.Run(() => JsonConvert.DeserializeObject<string>(answer));
+
+                if (!string.IsNullOrEmpty(result))
+                    exceptionDel = result;
+
+                eventHandler?.Invoke(this, null);
+            }
+            catch (Exception ex)
+            {
+                exceptionDel = ex.Message;
+            }
         }
     }
 }
