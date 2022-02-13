@@ -113,5 +113,22 @@ namespace ASPController_PC
             if (!string.IsNullOrEmpty(UserBD.GetException()))
                 MessageBox.Show(UserBD.GetException());
         }
+
+        private void toolStripButtonDeleteOrder_Click(object sender, EventArgs e)
+        {
+            if(dataGridViewOrders.SelectedRows.Count > 0)
+            {
+                List<Order> delItems = new List<Order>();
+                foreach (DataGridViewRow item in dataGridViewOrders.SelectedRows)
+                {
+                    delItems.Add((Order)item.DataBoundItem);
+                }
+                Order.Delete(delItems);
+                if (!string.IsNullOrEmpty(Order.GetException()))
+                    MessageBox.Show(Order.GetException());
+            }
+            else
+                MessageBox.Show("Выберите элементы для удаления");
+        }
     }
 }

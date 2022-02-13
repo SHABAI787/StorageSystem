@@ -93,6 +93,16 @@ namespace ASPController_PC.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_23 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_options_23 {
             get {
                 object obj = ResourceManager.GetObject("icons8-options-23", resourceCulture);

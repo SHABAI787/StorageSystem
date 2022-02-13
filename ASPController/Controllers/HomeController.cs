@@ -22,7 +22,6 @@ namespace ASPController.Controllers
         public async Task<string> Hello(string name)
         {
             string userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<string>(name));
-            //TestData userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<TestData>(name));
             return await Task.Factory.StartNew(() => JsonConvert.SerializeObject($"Hello {userNmae}"));
         }
 
@@ -86,6 +85,31 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> DelOrders(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    List<Order> delItems = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<Order>>(data));
+                    foreach (var delItem in delItems)
+                    {
+                        context.Order.Remove(context.Order.FirstOrDefault(o => o.Id == delItem.Id));
+                    }
+                    
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(error));
         }
 
         [HttpPost]
