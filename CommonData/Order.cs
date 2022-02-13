@@ -16,10 +16,8 @@ namespace CommonData
     /// </summary>
     [Serializable]
     [Table("Orders")]
-    public class Order
+    public class Order: BaseDelete
     {
-        private static string exception = string.Empty;
-
         [Browsable(false)]
         [DisplayName("Идентификатор")]
         public int Id { get; set; }
@@ -39,6 +37,7 @@ namespace CommonData
         [DisplayName("Описание")]
         public string Description { get; set; }
 
+        private static string exception = string.Empty;
         public static string GetException()
         {
             return exception;
@@ -93,11 +92,11 @@ namespace CommonData
             return orders;
         }
 
-        public static async void Delete(List<Order> dataBoundItems)
+        public override async void Delete<T>(List<T> dataBoundItems, EventHandler eventHandler)
         {
             try
             {
-                exception = string.Empty;
+                exceptionDel = string.Empty;
                 string JSONData = await Task.Run(() => JsonConvert.SerializeObject(dataBoundItems));
                 WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/DelOrders");
                 request.Method = "POST";
@@ -127,11 +126,13 @@ namespace CommonData
                 var result = await Task.Run(() => JsonConvert.DeserializeObject<string>(answer));
 
                 if (!string.IsNullOrEmpty(result))
-                    exception = result;
+                    exceptionDel = result;
+
+                eventHandler?.Invoke(this, null);
             }
             catch (Exception ex)
             {
-                exception = ex.Message;
+                exceptionDel = ex.Message;
             }
         }
     }

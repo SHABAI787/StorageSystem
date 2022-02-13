@@ -486,6 +486,7 @@ namespace ASPController_PC
             this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
             this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDelPerson.Text = "toolStripButton2";
+            this.toolStripButtonDelPerson.Click += new System.EventHandler(this.toolStripButtonDelPerson_Click);
             // 
             // toolStripButtonUpdatePerson
             // 

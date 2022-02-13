@@ -114,21 +114,34 @@ namespace ASPController_PC
                 MessageBox.Show(UserBD.GetException());
         }
 
-        private void toolStripButtonDeleteOrder_Click(object sender, EventArgs e)
+        private void DeleteItem<T>(DataGridView dataGridView, EventHandler eventHandler) where T: BaseDelete
         {
-            if(dataGridViewOrders.SelectedRows.Count > 0)
+            if (dataGridView.SelectedRows.Count > 0)
             {
-                List<Order> delItems = new List<Order>();
-                foreach (DataGridViewRow item in dataGridViewOrders.SelectedRows)
+                List<T> delItems = new List<T>();
+                foreach (DataGridViewRow item in dataGridView.SelectedRows)
                 {
-                    delItems.Add((Order)item.DataBoundItem);
+                    delItems.Add((T)item.DataBoundItem);
                 }
-                Order.Delete(delItems);
-                if (!string.IsNullOrEmpty(Order.GetException()))
-                    MessageBox.Show(Order.GetException());
+                var first = delItems.First();
+                first.Delete(delItems, eventHandler);
+
+                if (!string.IsNullOrEmpty(first.GetDelException()))
+                    MessageBox.Show(first.GetDelException());
             }
             else
                 MessageBox.Show("Выберите элементы для удаления");
+        }
+
+        private void toolStripButtonDeleteOrder_Click(object sender, EventArgs e)
+        {
+            DeleteItem<Order>(dataGridViewOrders, toolStripButtonUpdateOrder_Click);
+            
+        }
+
+        private void toolStripButtonDelPerson_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

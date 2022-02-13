@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Authorization.cs" />
     <Compile Include="ContextBD.cs" />
+    <Compile Include="BaseDelete.cs" />
     <Compile Include="Migrations\202202100951557_Add_Users_Persons_Post.cs" />
     <Compile Include="Migrations\202202100951557_Add_Users_Persons_Post.designer.cs">
       <DependentUpon>202202100951557_Add_Users_Persons_Post.cs</DependentUpon>
