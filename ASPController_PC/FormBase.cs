@@ -177,5 +177,10 @@ namespace ASPController_PC
         {
             new FormAddOrEditProduct((Product)dataGridViewProducts.SelectedRows[0].DataBoundItem).Show();
         }
+
+        private void dataGridViewOrders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormAddOrEditOrder((Order)dataGridViewOrders.SelectedRows[0].DataBoundItem).Show();
+        }
     }
 }

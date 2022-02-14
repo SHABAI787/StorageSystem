@@ -1,19 +1,14 @@
 ﻿using CommonData;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ASPController_PC
 {
-    public partial class FormAddOrEditProduct: Form
+    public partial class FormAddOrEditProduct : Form
     {
         Product product = null;
         public FormAddOrEditProduct(Product product = null)
@@ -40,23 +35,20 @@ namespace ASPController_PC
             comboBoxState.DataSource = new ObservableCollection<ProductState>(await ProductState.GetStates()).ToBindingList();
             comboBoxStore.DataSource = new ObservableCollection<Store>(await Store.GetStores()).ToBindingList();
             comboBoxProvider.DataSource = new ObservableCollection<Provider>(await Provider.GetProviders()).ToBindingList();
-            if (!string.IsNullOrEmpty(Post.GetException()))
-                MessageBox.Show(Post.GetException());
-            else
-            {
-                if (product.State != null)
-                    comboBoxState.SelectedItem = comboBoxState.Items.Cast<ProductState>().First(p => p.Id == product.State.Id);
-                if (product.Provider != null)
-                    comboBoxProvider.SelectedItem = comboBoxProvider.Items.Cast<Provider>().First(p => p.Id == product.Provider.Id);
-                if (product.Store != null)
-                    comboBoxStore.SelectedItem = comboBoxStore.Items.Cast<Store>().First(p => p.Id == product.Store.Id);
-            }
+
+            if (product.State != null)
+                comboBoxState.SelectedItem = comboBoxState.Items.Cast<ProductState>().First(p => p.Id == product.State.Id);
+            if (product.Provider != null)
+                comboBoxProvider.SelectedItem = comboBoxProvider.Items.Cast<Provider>().First(p => p.Id == product.Provider.Id);
+            if (product.Store != null)
+                comboBoxStore.SelectedItem = comboBoxStore.Items.Cast<Store>().First(p => p.Id == product.Store.Id);
+
         }
 
         private void buttonAddOrEdit_Click(object sender, EventArgs e)
         {
             decimal price = 0;
-            if(!decimal.TryParse(textBoxPrice.Text, out price))
+            if (!decimal.TryParse(textBoxPrice.Text, out price))
             {
                 MessageBox.Show("Стоимость задана не корректно");
                 return;

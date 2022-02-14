@@ -114,7 +114,7 @@ namespace CommonData
             {
                 exception = string.Empty;
                 string JSONData = await Task.Run(() => JsonConvert.SerializeObject(product));
-                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/AddOrEditProducts");
+                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/AddOrEditProduct");
                 request.Method = "POST";
                 string query = $"data={JSONData}";
                 byte[] byteMsg = Encoding.UTF8.GetBytes(query);

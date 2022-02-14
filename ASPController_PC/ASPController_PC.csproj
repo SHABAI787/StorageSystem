@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAddOrEditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddOrEditOrder.Designer.cs">
+      <DependentUpon>FormAddOrEditOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddOrEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddOrEditOrder.resx">
+      <DependentUpon>FormAddOrEditOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddOrEditProduct.resx">
       <DependentUpon>FormAddOrEditProduct.cs</DependentUpon>
     </EmbeddedResource>

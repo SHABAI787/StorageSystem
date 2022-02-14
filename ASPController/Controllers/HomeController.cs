@@ -68,7 +68,7 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
-        public async Task<string> AddOrEditProducts(string data)
+        public async Task<string> AddOrEditProduct(string data)
         {
             string error = string.Empty;
             try
@@ -160,8 +160,9 @@ namespace ASPController.Controllers
                 using (ContextBD context = new ContextBD())
                 {
                    res.Orders = context.Order.Include("State").Include("Person").Include("Person.Post").
-                        Include("Product").Include("Product.State").Include("Product.Store").
-                        Include("Product.Provider").ToList();
+                        Include("Product").Include("Product.State").Include("Product.Store")
+                        .Include("Product.Provider").Include("Product.Provider.Responsible")
+                        .Include("Product.Provider.Responsible.Post").ToList();
                 }
             }
             catch (Exception ex)
@@ -170,6 +171,45 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> AddOrEditOrder(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Order>(data));
+                    itemAddOrEdit.State = itemAddOrEdit.State != null ? context.ProductStates.FirstOrDefault(p => p.Id == itemAddOrEdit.State.Id) : null;
+                    itemAddOrEdit.Person = itemAddOrEdit.Person != null ? context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Person.Id) : null;
+                    itemAddOrEdit.Product = itemAddOrEdit.Product != null ? context.Products.FirstOrDefault(p => p.Id == itemAddOrEdit.Product.Id) : null;
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Order.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Order.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        if (itemEdit != null)
+                        {
+                            itemEdit.Description = itemAddOrEdit.Description;
+                            itemEdit.Quantity = itemAddOrEdit.Quantity;
+                            itemEdit.State = itemAddOrEdit.State;
+                            itemEdit.Person = itemAddOrEdit.Person;
+                            itemEdit.Product = itemAddOrEdit.Product;
+                        }
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
         }
 
         [HttpPost]

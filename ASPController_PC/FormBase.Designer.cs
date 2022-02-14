@@ -32,53 +32,53 @@ namespace ASPController_PC
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageOrders = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonDeleteOrder = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonUpdateOrder = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchOrder = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.tabPagePersons = new System.Windows.Forms.TabPage();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
+            this.tabPagePosts = new System.Windows.Forms.TabPage();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewPosts = new System.Windows.Forms.DataGridView();
+            this.tabPageProducts = new System.Windows.Forms.TabPage();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.tabPageProviders = new System.Windows.Forms.TabPage();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewProviders = new System.Windows.Forms.DataGridView();
+            this.tabPageStores = new System.Windows.Forms.TabPage();
+            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewStores = new System.Windows.Forms.DataGridView();
+            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
+            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewUsersBD = new System.Windows.Forms.DataGridView();
+            this.toolStripButtonDeleteOrder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUpdateOrder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSearchOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchPerson = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
-            this.tabPagePosts = new System.Windows.Forms.TabPage();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchPost = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewPosts = new System.Windows.Forms.DataGridView();
-            this.tabPageProducts = new System.Windows.Forms.TabPage();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.tabPageProviders = new System.Windows.Forms.TabPage();
-            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchProvider = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewProviders = new System.Windows.Forms.DataGridView();
-            this.tabPageStores = new System.Windows.Forms.TabPage();
-            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchStore = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewStores = new System.Windows.Forms.DataGridView();
-            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
-            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchUsersBD = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewUsersBD = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPageOrders.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -144,35 +144,6 @@ namespace ASPController_PC
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonDeleteOrder
-            // 
-            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
-            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
-            this.toolStripButtonDeleteOrder.Click += new System.EventHandler(this.toolStripButtonDeleteOrder_Click);
-            // 
-            // toolStripButtonUpdateOrder
-            // 
-            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
-            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
-            this.toolStripButtonUpdateOrder.Click += new System.EventHandler(this.toolStripButtonUpdateOrder_Click);
-            // 
-            // toolStripButtonSearchOrder
-            // 
-            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
-            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
-            // 
             // dataGridViewOrders
             // 
             this.dataGridViewOrders.AllowUserToAddRows = false;
@@ -191,6 +162,7 @@ namespace ASPController_PC
             this.dataGridViewOrders.ShowEditingIcon = false;
             this.dataGridViewOrders.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewOrders.TabIndex = 1;
+            this.dataGridViewOrders.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOrders_CellMouseDoubleClick);
             // 
             // tabPagePersons
             // 
@@ -220,45 +192,6 @@ namespace ASPController_PC
             this.toolStrip3.Size = new System.Drawing.Size(792, 25);
             this.toolStrip3.TabIndex = 7;
             this.toolStrip3.Text = "toolStrip3";
-            // 
-            // toolStripButtonAddPerson
-            // 
-            this.toolStripButtonAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddPerson.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddPerson.Name = "toolStripButtonAddPerson";
-            this.toolStripButtonAddPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddPerson.Text = "toolStripButton1";
-            this.toolStripButtonAddPerson.Click += new System.EventHandler(this.toolStripButtonAddPerson_Click);
-            // 
-            // toolStripButtonDelPerson
-            // 
-            this.toolStripButtonDelPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelPerson.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
-            this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelPerson.Text = "toolStripButton2";
-            this.toolStripButtonDelPerson.Click += new System.EventHandler(this.toolStripButtonDelPerson_Click);
-            // 
-            // toolStripButtonUpdatePerson
-            // 
-            this.toolStripButtonUpdatePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdatePerson.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdatePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdatePerson.Name = "toolStripButtonUpdatePerson";
-            this.toolStripButtonUpdatePerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
-            this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
-            // 
-            // toolStripButtonSearchPerson
-            // 
-            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
-            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
             // 
             // dataGridViewPersons
             // 
@@ -308,44 +241,6 @@ namespace ASPController_PC
             this.toolStrip4.TabIndex = 9;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // toolStripButtonAddPost
-            // 
-            this.toolStripButtonAddPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddPost.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddPost.Name = "toolStripButtonAddPost";
-            this.toolStripButtonAddPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddPost.Text = "toolStripButton1";
-            // 
-            // toolStripButtonDelPost
-            // 
-            this.toolStripButtonDelPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelPost.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelPost.Name = "toolStripButtonDelPost";
-            this.toolStripButtonDelPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelPost.Text = "toolStripButton2";
-            this.toolStripButtonDelPost.Click += new System.EventHandler(this.toolStripButtonDelPost_Click);
-            // 
-            // toolStripButtonUpdatePost
-            // 
-            this.toolStripButtonUpdatePost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdatePost.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdatePost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdatePost.Name = "toolStripButtonUpdatePost";
-            this.toolStripButtonUpdatePost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdatePost.Text = "toolStripButton3";
-            this.toolStripButtonUpdatePost.Click += new System.EventHandler(this.toolStripButtonUpdatePost_Click);
-            // 
-            // toolStripButtonSearchPost
-            // 
-            this.toolStripButtonSearchPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPost.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPost.Name = "toolStripButtonSearchPost";
-            this.toolStripButtonSearchPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPost.Text = "toolStripButton4";
-            // 
             // dataGridViewPosts
             // 
             this.dataGridViewPosts.AllowUserToAddRows = false;
@@ -393,54 +288,6 @@ namespace ASPController_PC
             this.toolStrip2.Size = new System.Drawing.Size(792, 25);
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButtonAddProduct
-            // 
-            this.toolStripButtonAddProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddProduct.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddProduct.Name = "toolStripButtonAddProduct";
-            this.toolStripButtonAddProduct.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddProduct.Text = "Добавить";
-            this.toolStripButtonAddProduct.Click += new System.EventHandler(this.toolStripButtonAddProduct_Click_1);
-            // 
-            // toolStripButtonDeleteProduct
-            // 
-            this.toolStripButtonDeleteProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDeleteProduct.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDeleteProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDeleteProduct.Name = "toolStripButtonDeleteProduct";
-            this.toolStripButtonDeleteProduct.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDeleteProduct.Text = "Удалить";
-            this.toolStripButtonDeleteProduct.Click += new System.EventHandler(this.toolStripButtonDeleteProduct_Click);
-            // 
-            // toolStripButtonUpdateProduct
-            // 
-            this.toolStripButtonUpdateProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateProduct.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateProduct.Name = "toolStripButtonUpdateProduct";
-            this.toolStripButtonUpdateProduct.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateProduct.Text = "Обновить";
-            this.toolStripButtonUpdateProduct.Click += new System.EventHandler(this.toolStripButtonUpdateProduct_Click);
-            // 
-            // toolStripButtonSearchProduct
-            // 
-            this.toolStripButtonSearchProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchProduct.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchProduct.Name = "toolStripButtonSearchProduct";
-            this.toolStripButtonSearchProduct.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchProduct.Text = "Поиск";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::ASPController_PC.Properties.Resources.icons8_options_23;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Состояния товара";
             // 
             // dataGridViewProducts
             // 
@@ -490,44 +337,6 @@ namespace ASPController_PC
             this.toolStrip5.TabIndex = 7;
             this.toolStrip5.Text = "toolStrip5";
             // 
-            // toolStripButtonAddProvider
-            // 
-            this.toolStripButtonAddProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddProvider.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddProvider.Name = "toolStripButtonAddProvider";
-            this.toolStripButtonAddProvider.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddProvider.Text = "toolStripButton1";
-            // 
-            // toolStripButtonDelProvider
-            // 
-            this.toolStripButtonDelProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelProvider.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelProvider.Name = "toolStripButtonDelProvider";
-            this.toolStripButtonDelProvider.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelProvider.Text = "toolStripButton2";
-            this.toolStripButtonDelProvider.Click += new System.EventHandler(this.toolStripButtonDelProvider_Click);
-            // 
-            // toolStripButtonUpdateProvider
-            // 
-            this.toolStripButtonUpdateProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateProvider.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateProvider.Name = "toolStripButtonUpdateProvider";
-            this.toolStripButtonUpdateProvider.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateProvider.Text = "toolStripButton3";
-            this.toolStripButtonUpdateProvider.Click += new System.EventHandler(this.toolStripButtonUpdateProvider_Click);
-            // 
-            // toolStripButtonSearchProvider
-            // 
-            this.toolStripButtonSearchProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchProvider.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchProvider.Name = "toolStripButtonSearchProvider";
-            this.toolStripButtonSearchProvider.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchProvider.Text = "toolStripButton4";
-            // 
             // dataGridViewProviders
             // 
             this.dataGridViewProviders.AllowUserToAddRows = false;
@@ -574,44 +383,6 @@ namespace ASPController_PC
             this.toolStrip6.Size = new System.Drawing.Size(792, 25);
             this.toolStrip6.TabIndex = 9;
             this.toolStrip6.Text = "toolStrip6";
-            // 
-            // toolStripButtonAddStore
-            // 
-            this.toolStripButtonAddStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddStore.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddStore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddStore.Name = "toolStripButtonAddStore";
-            this.toolStripButtonAddStore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddStore.Text = "toolStripButton1";
-            // 
-            // toolStripButtonDelStore
-            // 
-            this.toolStripButtonDelStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelStore.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelStore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelStore.Name = "toolStripButtonDelStore";
-            this.toolStripButtonDelStore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelStore.Text = "toolStripButton2";
-            this.toolStripButtonDelStore.Click += new System.EventHandler(this.toolStripButtonDelStore_Click);
-            // 
-            // toolStripButtonUpdateStore
-            // 
-            this.toolStripButtonUpdateStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateStore.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateStore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateStore.Name = "toolStripButtonUpdateStore";
-            this.toolStripButtonUpdateStore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateStore.Text = "toolStripButton3";
-            this.toolStripButtonUpdateStore.Click += new System.EventHandler(this.toolStripButtonUpdateStore_Click);
-            // 
-            // toolStripButtonSearchStore
-            // 
-            this.toolStripButtonSearchStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchStore.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchStore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchStore.Name = "toolStripButtonSearchStore";
-            this.toolStripButtonSearchStore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchStore.Text = "toolStripButton4";
             // 
             // dataGridViewStores
             // 
@@ -660,6 +431,255 @@ namespace ASPController_PC
             this.toolStrip7.TabIndex = 11;
             this.toolStrip7.Text = "toolStrip7";
             // 
+            // dataGridViewUsersBD
+            // 
+            this.dataGridViewUsersBD.AllowUserToAddRows = false;
+            this.dataGridViewUsersBD.AllowUserToDeleteRows = false;
+            this.dataGridViewUsersBD.AllowUserToOrderColumns = true;
+            this.dataGridViewUsersBD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewUsersBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUsersBD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewUsersBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsersBD.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewUsersBD.Name = "dataGridViewUsersBD";
+            this.dataGridViewUsersBD.ReadOnly = true;
+            this.dataGridViewUsersBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUsersBD.ShowEditingIcon = false;
+            this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewUsersBD.TabIndex = 10;
+            // 
+            // toolStripButtonDeleteOrder
+            // 
+            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
+            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
+            this.toolStripButtonDeleteOrder.Click += new System.EventHandler(this.toolStripButtonDeleteOrder_Click);
+            // 
+            // toolStripButtonUpdateOrder
+            // 
+            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
+            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
+            this.toolStripButtonUpdateOrder.Click += new System.EventHandler(this.toolStripButtonUpdateOrder_Click);
+            // 
+            // toolStripButtonSearchOrder
+            // 
+            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
+            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
+            // 
+            // toolStripButtonAddPerson
+            // 
+            this.toolStripButtonAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddPerson.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddPerson.Name = "toolStripButtonAddPerson";
+            this.toolStripButtonAddPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddPerson.Text = "toolStripButton1";
+            this.toolStripButtonAddPerson.Click += new System.EventHandler(this.toolStripButtonAddPerson_Click);
+            // 
+            // toolStripButtonDelPerson
+            // 
+            this.toolStripButtonDelPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelPerson.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
+            this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelPerson.Text = "toolStripButton2";
+            this.toolStripButtonDelPerson.Click += new System.EventHandler(this.toolStripButtonDelPerson_Click);
+            // 
+            // toolStripButtonUpdatePerson
+            // 
+            this.toolStripButtonUpdatePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdatePerson.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdatePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdatePerson.Name = "toolStripButtonUpdatePerson";
+            this.toolStripButtonUpdatePerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
+            this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
+            // 
+            // toolStripButtonSearchPerson
+            // 
+            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
+            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
+            // 
+            // toolStripButtonAddPost
+            // 
+            this.toolStripButtonAddPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddPost.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddPost.Name = "toolStripButtonAddPost";
+            this.toolStripButtonAddPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddPost.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDelPost
+            // 
+            this.toolStripButtonDelPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelPost.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelPost.Name = "toolStripButtonDelPost";
+            this.toolStripButtonDelPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelPost.Text = "toolStripButton2";
+            this.toolStripButtonDelPost.Click += new System.EventHandler(this.toolStripButtonDelPost_Click);
+            // 
+            // toolStripButtonUpdatePost
+            // 
+            this.toolStripButtonUpdatePost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdatePost.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdatePost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdatePost.Name = "toolStripButtonUpdatePost";
+            this.toolStripButtonUpdatePost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdatePost.Text = "toolStripButton3";
+            this.toolStripButtonUpdatePost.Click += new System.EventHandler(this.toolStripButtonUpdatePost_Click);
+            // 
+            // toolStripButtonSearchPost
+            // 
+            this.toolStripButtonSearchPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchPost.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchPost.Name = "toolStripButtonSearchPost";
+            this.toolStripButtonSearchPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchPost.Text = "toolStripButton4";
+            // 
+            // toolStripButtonAddProduct
+            // 
+            this.toolStripButtonAddProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddProduct.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddProduct.Name = "toolStripButtonAddProduct";
+            this.toolStripButtonAddProduct.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddProduct.Text = "Добавить";
+            this.toolStripButtonAddProduct.Click += new System.EventHandler(this.toolStripButtonAddProduct_Click_1);
+            // 
+            // toolStripButtonDeleteProduct
+            // 
+            this.toolStripButtonDeleteProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDeleteProduct.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDeleteProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteProduct.Name = "toolStripButtonDeleteProduct";
+            this.toolStripButtonDeleteProduct.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDeleteProduct.Text = "Удалить";
+            this.toolStripButtonDeleteProduct.Click += new System.EventHandler(this.toolStripButtonDeleteProduct_Click);
+            // 
+            // toolStripButtonUpdateProduct
+            // 
+            this.toolStripButtonUpdateProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateProduct.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateProduct.Name = "toolStripButtonUpdateProduct";
+            this.toolStripButtonUpdateProduct.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateProduct.Text = "Обновить";
+            this.toolStripButtonUpdateProduct.Click += new System.EventHandler(this.toolStripButtonUpdateProduct_Click);
+            // 
+            // toolStripButtonSearchProduct
+            // 
+            this.toolStripButtonSearchProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchProduct.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchProduct.Name = "toolStripButtonSearchProduct";
+            this.toolStripButtonSearchProduct.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchProduct.Text = "Поиск";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::ASPController_PC.Properties.Resources.icons8_options_23;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Состояния товара";
+            // 
+            // toolStripButtonAddProvider
+            // 
+            this.toolStripButtonAddProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddProvider.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddProvider.Name = "toolStripButtonAddProvider";
+            this.toolStripButtonAddProvider.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddProvider.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDelProvider
+            // 
+            this.toolStripButtonDelProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelProvider.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelProvider.Name = "toolStripButtonDelProvider";
+            this.toolStripButtonDelProvider.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelProvider.Text = "toolStripButton2";
+            this.toolStripButtonDelProvider.Click += new System.EventHandler(this.toolStripButtonDelProvider_Click);
+            // 
+            // toolStripButtonUpdateProvider
+            // 
+            this.toolStripButtonUpdateProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateProvider.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateProvider.Name = "toolStripButtonUpdateProvider";
+            this.toolStripButtonUpdateProvider.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateProvider.Text = "toolStripButton3";
+            this.toolStripButtonUpdateProvider.Click += new System.EventHandler(this.toolStripButtonUpdateProvider_Click);
+            // 
+            // toolStripButtonSearchProvider
+            // 
+            this.toolStripButtonSearchProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchProvider.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchProvider.Name = "toolStripButtonSearchProvider";
+            this.toolStripButtonSearchProvider.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchProvider.Text = "toolStripButton4";
+            // 
+            // toolStripButtonAddStore
+            // 
+            this.toolStripButtonAddStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddStore.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddStore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddStore.Name = "toolStripButtonAddStore";
+            this.toolStripButtonAddStore.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddStore.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDelStore
+            // 
+            this.toolStripButtonDelStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelStore.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelStore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelStore.Name = "toolStripButtonDelStore";
+            this.toolStripButtonDelStore.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelStore.Text = "toolStripButton2";
+            this.toolStripButtonDelStore.Click += new System.EventHandler(this.toolStripButtonDelStore_Click);
+            // 
+            // toolStripButtonUpdateStore
+            // 
+            this.toolStripButtonUpdateStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateStore.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateStore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateStore.Name = "toolStripButtonUpdateStore";
+            this.toolStripButtonUpdateStore.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateStore.Text = "toolStripButton3";
+            this.toolStripButtonUpdateStore.Click += new System.EventHandler(this.toolStripButtonUpdateStore_Click);
+            // 
+            // toolStripButtonSearchStore
+            // 
+            this.toolStripButtonSearchStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchStore.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchStore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchStore.Name = "toolStripButtonSearchStore";
+            this.toolStripButtonSearchStore.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchStore.Text = "toolStripButton4";
+            // 
             // toolStripButtonAddUsersBD
             // 
             this.toolStripButtonAddUsersBD.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -697,25 +717,6 @@ namespace ASPController_PC
             this.toolStripButtonSearchUsersBD.Name = "toolStripButtonSearchUsersBD";
             this.toolStripButtonSearchUsersBD.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchUsersBD.Text = "toolStripButton4";
-            // 
-            // dataGridViewUsersBD
-            // 
-            this.dataGridViewUsersBD.AllowUserToAddRows = false;
-            this.dataGridViewUsersBD.AllowUserToDeleteRows = false;
-            this.dataGridViewUsersBD.AllowUserToOrderColumns = true;
-            this.dataGridViewUsersBD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewUsersBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUsersBD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewUsersBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsersBD.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewUsersBD.Name = "dataGridViewUsersBD";
-            this.dataGridViewUsersBD.ReadOnly = true;
-            this.dataGridViewUsersBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsersBD.ShowEditingIcon = false;
-            this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewUsersBD.TabIndex = 10;
             // 
             // FormBase
             // 
