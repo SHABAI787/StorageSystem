@@ -378,6 +378,45 @@ namespace ASPController.Controllers
             return res;
         }
 
+        [HttpPost]
+        public async Task<string> AddOrEditPerson(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Person>(data));
+                    itemAddOrEdit.Post = itemAddOrEdit.Post != null ? context.Posts.FirstOrDefault(p => p.Id == itemAddOrEdit.Post.Id) : null;
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Persons.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        if(itemEdit != null)
+                        {
+                            itemEdit.LastName = itemAddOrEdit.LastName;
+                            itemEdit.Name = itemAddOrEdit.Name;
+                            itemEdit.MiddleName = itemAddOrEdit.MiddleName;
+                            itemEdit.PhoneNumber = itemAddOrEdit.PhoneNumber;
+                            itemEdit.Post = itemAddOrEdit.Post;
+                            itemEdit.Email = itemAddOrEdit.Email;
+                            itemEdit.DataBirth = itemAddOrEdit.DataBirth;
+                        }
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
 
         /// <summary>
         /// Авторизация. Возвращает кортеж (логин, имя, описание ошибки)

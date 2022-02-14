@@ -32,53 +32,53 @@ namespace ASPController_PC
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageOrders = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
-            this.tabPagePersons = new System.Windows.Forms.TabPage();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
-            this.tabPagePosts = new System.Windows.Forms.TabPage();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewPosts = new System.Windows.Forms.DataGridView();
-            this.tabPageProducts = new System.Windows.Forms.TabPage();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.tabPageProviders = new System.Windows.Forms.TabPage();
-            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewProviders = new System.Windows.Forms.DataGridView();
-            this.tabPageStores = new System.Windows.Forms.TabPage();
-            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewStores = new System.Windows.Forms.DataGridView();
-            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
-            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewUsersBD = new System.Windows.Forms.DataGridView();
             this.toolStripButtonDeleteOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchOrder = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.tabPagePersons = new System.Windows.Forms.TabPage();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchPerson = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
+            this.tabPagePosts = new System.Windows.Forms.TabPage();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchPost = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewPosts = new System.Windows.Forms.DataGridView();
+            this.tabPageProducts = new System.Windows.Forms.TabPage();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.tabPageProviders = new System.Windows.Forms.TabPage();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchProvider = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewProviders = new System.Windows.Forms.DataGridView();
+            this.tabPageStores = new System.Windows.Forms.TabPage();
+            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchStore = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewStores = new System.Windows.Forms.DataGridView();
+            this.tabPageUsersBD = new System.Windows.Forms.TabPage();
+            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearchUsersBD = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewUsersBD = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPageOrders.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -144,6 +144,35 @@ namespace ASPController_PC
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonDeleteOrder
+            // 
+            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
+            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
+            this.toolStripButtonDeleteOrder.Click += new System.EventHandler(this.toolStripButtonDeleteOrder_Click);
+            // 
+            // toolStripButtonUpdateOrder
+            // 
+            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
+            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
+            this.toolStripButtonUpdateOrder.Click += new System.EventHandler(this.toolStripButtonUpdateOrder_Click);
+            // 
+            // toolStripButtonSearchOrder
+            // 
+            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
+            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
+            // 
             // dataGridViewOrders
             // 
             this.dataGridViewOrders.AllowUserToAddRows = false;
@@ -192,6 +221,45 @@ namespace ASPController_PC
             this.toolStrip3.TabIndex = 7;
             this.toolStrip3.Text = "toolStrip3";
             // 
+            // toolStripButtonAddPerson
+            // 
+            this.toolStripButtonAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddPerson.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddPerson.Name = "toolStripButtonAddPerson";
+            this.toolStripButtonAddPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddPerson.Text = "toolStripButton1";
+            this.toolStripButtonAddPerson.Click += new System.EventHandler(this.toolStripButtonAddPerson_Click);
+            // 
+            // toolStripButtonDelPerson
+            // 
+            this.toolStripButtonDelPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelPerson.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
+            this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelPerson.Text = "toolStripButton2";
+            this.toolStripButtonDelPerson.Click += new System.EventHandler(this.toolStripButtonDelPerson_Click);
+            // 
+            // toolStripButtonUpdatePerson
+            // 
+            this.toolStripButtonUpdatePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdatePerson.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdatePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdatePerson.Name = "toolStripButtonUpdatePerson";
+            this.toolStripButtonUpdatePerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
+            this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
+            // 
+            // toolStripButtonSearchPerson
+            // 
+            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
+            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
+            // 
             // dataGridViewPersons
             // 
             this.dataGridViewPersons.AllowUserToAddRows = false;
@@ -210,6 +278,7 @@ namespace ASPController_PC
             this.dataGridViewPersons.ShowEditingIcon = false;
             this.dataGridViewPersons.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewPersons.TabIndex = 6;
+            this.dataGridViewPersons.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewPersons_CellMouseDoubleClick);
             // 
             // tabPagePosts
             // 
@@ -238,6 +307,44 @@ namespace ASPController_PC
             this.toolStrip4.Size = new System.Drawing.Size(792, 25);
             this.toolStrip4.TabIndex = 9;
             this.toolStrip4.Text = "toolStrip4";
+            // 
+            // toolStripButtonAddPost
+            // 
+            this.toolStripButtonAddPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddPost.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
+            this.toolStripButtonAddPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddPost.Name = "toolStripButtonAddPost";
+            this.toolStripButtonAddPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddPost.Text = "toolStripButton1";
+            // 
+            // toolStripButtonDelPost
+            // 
+            this.toolStripButtonDelPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelPost.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
+            this.toolStripButtonDelPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelPost.Name = "toolStripButtonDelPost";
+            this.toolStripButtonDelPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelPost.Text = "toolStripButton2";
+            this.toolStripButtonDelPost.Click += new System.EventHandler(this.toolStripButtonDelPost_Click);
+            // 
+            // toolStripButtonUpdatePost
+            // 
+            this.toolStripButtonUpdatePost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdatePost.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
+            this.toolStripButtonUpdatePost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdatePost.Name = "toolStripButtonUpdatePost";
+            this.toolStripButtonUpdatePost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdatePost.Text = "toolStripButton3";
+            this.toolStripButtonUpdatePost.Click += new System.EventHandler(this.toolStripButtonUpdatePost_Click);
+            // 
+            // toolStripButtonSearchPost
+            // 
+            this.toolStripButtonSearchPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSearchPost.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
+            this.toolStripButtonSearchPost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearchPost.Name = "toolStripButtonSearchPost";
+            this.toolStripButtonSearchPost.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearchPost.Text = "toolStripButton4";
             // 
             // dataGridViewPosts
             // 
@@ -287,271 +394,6 @@ namespace ASPController_PC
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // dataGridViewProducts
-            // 
-            this.dataGridViewProducts.AllowUserToAddRows = false;
-            this.dataGridViewProducts.AllowUserToDeleteRows = false;
-            this.dataGridViewProducts.AllowUserToOrderColumns = true;
-            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewProducts.Name = "dataGridViewProducts";
-            this.dataGridViewProducts.ReadOnly = true;
-            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.ShowEditingIcon = false;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewProducts.TabIndex = 4;
-            // 
-            // tabPageProviders
-            // 
-            this.tabPageProviders.Controls.Add(this.toolStrip5);
-            this.tabPageProviders.Controls.Add(this.dataGridViewProviders);
-            this.tabPageProviders.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProviders.Name = "tabPageProviders";
-            this.tabPageProviders.Size = new System.Drawing.Size(792, 424);
-            this.tabPageProviders.TabIndex = 4;
-            this.tabPageProviders.Text = "Поставщики";
-            this.tabPageProviders.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip5
-            // 
-            this.toolStrip5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toolStrip5.AutoSize = false;
-            this.toolStrip5.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddProvider,
-            this.toolStripButtonDelProvider,
-            this.toolStripButtonUpdateProvider,
-            this.toolStripButtonSearchProvider});
-            this.toolStrip5.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip5.Name = "toolStrip5";
-            this.toolStrip5.Size = new System.Drawing.Size(792, 25);
-            this.toolStrip5.TabIndex = 7;
-            this.toolStrip5.Text = "toolStrip5";
-            // 
-            // dataGridViewProviders
-            // 
-            this.dataGridViewProviders.AllowUserToAddRows = false;
-            this.dataGridViewProviders.AllowUserToDeleteRows = false;
-            this.dataGridViewProviders.AllowUserToOrderColumns = true;
-            this.dataGridViewProviders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProviders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProviders.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewProviders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProviders.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewProviders.Name = "dataGridViewProviders";
-            this.dataGridViewProviders.ReadOnly = true;
-            this.dataGridViewProviders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProviders.ShowEditingIcon = false;
-            this.dataGridViewProviders.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewProviders.TabIndex = 6;
-            // 
-            // tabPageStores
-            // 
-            this.tabPageStores.Controls.Add(this.toolStrip6);
-            this.tabPageStores.Controls.Add(this.dataGridViewStores);
-            this.tabPageStores.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStores.Name = "tabPageStores";
-            this.tabPageStores.Size = new System.Drawing.Size(792, 424);
-            this.tabPageStores.TabIndex = 5;
-            this.tabPageStores.Text = "Склады";
-            this.tabPageStores.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip6
-            // 
-            this.toolStrip6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toolStrip6.AutoSize = false;
-            this.toolStrip6.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddStore,
-            this.toolStripButtonDelStore,
-            this.toolStripButtonUpdateStore,
-            this.toolStripButtonSearchStore});
-            this.toolStrip6.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip6.Name = "toolStrip6";
-            this.toolStrip6.Size = new System.Drawing.Size(792, 25);
-            this.toolStrip6.TabIndex = 9;
-            this.toolStrip6.Text = "toolStrip6";
-            // 
-            // dataGridViewStores
-            // 
-            this.dataGridViewStores.AllowUserToAddRows = false;
-            this.dataGridViewStores.AllowUserToDeleteRows = false;
-            this.dataGridViewStores.AllowUserToOrderColumns = true;
-            this.dataGridViewStores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewStores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStores.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewStores.Name = "dataGridViewStores";
-            this.dataGridViewStores.ReadOnly = true;
-            this.dataGridViewStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStores.ShowEditingIcon = false;
-            this.dataGridViewStores.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewStores.TabIndex = 8;
-            // 
-            // tabPageUsersBD
-            // 
-            this.tabPageUsersBD.Controls.Add(this.toolStrip7);
-            this.tabPageUsersBD.Controls.Add(this.dataGridViewUsersBD);
-            this.tabPageUsersBD.Location = new System.Drawing.Point(4, 22);
-            this.tabPageUsersBD.Name = "tabPageUsersBD";
-            this.tabPageUsersBD.Size = new System.Drawing.Size(792, 424);
-            this.tabPageUsersBD.TabIndex = 6;
-            this.tabPageUsersBD.Text = "Пользователи";
-            this.tabPageUsersBD.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip7
-            // 
-            this.toolStrip7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toolStrip7.AutoSize = false;
-            this.toolStrip7.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddUsersBD,
-            this.toolStripButtonDelUsersBD,
-            this.toolStripButtonUpdateUsersBD,
-            this.toolStripButtonSearchUsersBD});
-            this.toolStrip7.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip7.Name = "toolStrip7";
-            this.toolStrip7.Size = new System.Drawing.Size(792, 25);
-            this.toolStrip7.TabIndex = 11;
-            this.toolStrip7.Text = "toolStrip7";
-            // 
-            // dataGridViewUsersBD
-            // 
-            this.dataGridViewUsersBD.AllowUserToAddRows = false;
-            this.dataGridViewUsersBD.AllowUserToDeleteRows = false;
-            this.dataGridViewUsersBD.AllowUserToOrderColumns = true;
-            this.dataGridViewUsersBD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewUsersBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUsersBD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewUsersBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsersBD.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewUsersBD.Name = "dataGridViewUsersBD";
-            this.dataGridViewUsersBD.ReadOnly = true;
-            this.dataGridViewUsersBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsersBD.ShowEditingIcon = false;
-            this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
-            this.dataGridViewUsersBD.TabIndex = 10;
-            // 
-            // toolStripButtonDeleteOrder
-            // 
-            this.toolStripButtonDeleteOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDeleteOrder.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDeleteOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDeleteOrder.Name = "toolStripButtonDeleteOrder";
-            this.toolStripButtonDeleteOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDeleteOrder.Text = "toolStripButton2";
-            this.toolStripButtonDeleteOrder.Click += new System.EventHandler(this.toolStripButtonDeleteOrder_Click);
-            // 
-            // toolStripButtonUpdateOrder
-            // 
-            this.toolStripButtonUpdateOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdateOrder.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdateOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdateOrder.Name = "toolStripButtonUpdateOrder";
-            this.toolStripButtonUpdateOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdateOrder.Text = "toolStripButton3";
-            this.toolStripButtonUpdateOrder.Click += new System.EventHandler(this.toolStripButtonUpdateOrder_Click);
-            // 
-            // toolStripButtonSearchOrder
-            // 
-            this.toolStripButtonSearchOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchOrder.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
-            this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchOrder.Text = "toolStripButton4";
-            // 
-            // toolStripButtonAddPerson
-            // 
-            this.toolStripButtonAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddPerson.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddPerson.Name = "toolStripButtonAddPerson";
-            this.toolStripButtonAddPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddPerson.Text = "toolStripButton1";
-            // 
-            // toolStripButtonDelPerson
-            // 
-            this.toolStripButtonDelPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelPerson.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelPerson.Name = "toolStripButtonDelPerson";
-            this.toolStripButtonDelPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelPerson.Text = "toolStripButton2";
-            this.toolStripButtonDelPerson.Click += new System.EventHandler(this.toolStripButtonDelPerson_Click);
-            // 
-            // toolStripButtonUpdatePerson
-            // 
-            this.toolStripButtonUpdatePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdatePerson.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdatePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdatePerson.Name = "toolStripButtonUpdatePerson";
-            this.toolStripButtonUpdatePerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
-            this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
-            // 
-            // toolStripButtonSearchPerson
-            // 
-            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
-            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
-            // 
-            // toolStripButtonAddPost
-            // 
-            this.toolStripButtonAddPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddPost.Image = global::ASPController_PC.Properties.Resources.icons8_add_23;
-            this.toolStripButtonAddPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddPost.Name = "toolStripButtonAddPost";
-            this.toolStripButtonAddPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddPost.Text = "toolStripButton1";
-            // 
-            // toolStripButtonDelPost
-            // 
-            this.toolStripButtonDelPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelPost.Image = global::ASPController_PC.Properties.Resources.icons8_close_window_23;
-            this.toolStripButtonDelPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelPost.Name = "toolStripButtonDelPost";
-            this.toolStripButtonDelPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelPost.Text = "toolStripButton2";
-            this.toolStripButtonDelPost.Click += new System.EventHandler(this.toolStripButtonDelPost_Click);
-            // 
-            // toolStripButtonUpdatePost
-            // 
-            this.toolStripButtonUpdatePost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUpdatePost.Image = global::ASPController_PC.Properties.Resources.icons8_update_23;
-            this.toolStripButtonUpdatePost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUpdatePost.Name = "toolStripButtonUpdatePost";
-            this.toolStripButtonUpdatePost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUpdatePost.Text = "toolStripButton3";
-            this.toolStripButtonUpdatePost.Click += new System.EventHandler(this.toolStripButtonUpdatePost_Click);
-            // 
-            // toolStripButtonSearchPost
-            // 
-            this.toolStripButtonSearchPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPost.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPost.Name = "toolStripButtonSearchPost";
-            this.toolStripButtonSearchPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPost.Text = "toolStripButton4";
-            // 
             // toolStripButtonAddProduct
             // 
             this.toolStripButtonAddProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -600,6 +442,53 @@ namespace ASPController_PC
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Состояния товара";
             // 
+            // dataGridViewProducts
+            // 
+            this.dataGridViewProducts.AllowUserToAddRows = false;
+            this.dataGridViewProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewProducts.AllowUserToOrderColumns = true;
+            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProducts.ShowEditingIcon = false;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewProducts.TabIndex = 4;
+            // 
+            // tabPageProviders
+            // 
+            this.tabPageProviders.Controls.Add(this.toolStrip5);
+            this.tabPageProviders.Controls.Add(this.dataGridViewProviders);
+            this.tabPageProviders.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProviders.Name = "tabPageProviders";
+            this.tabPageProviders.Size = new System.Drawing.Size(792, 424);
+            this.tabPageProviders.TabIndex = 4;
+            this.tabPageProviders.Text = "Поставщики";
+            this.tabPageProviders.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip5
+            // 
+            this.toolStrip5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip5.AutoSize = false;
+            this.toolStrip5.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddProvider,
+            this.toolStripButtonDelProvider,
+            this.toolStripButtonUpdateProvider,
+            this.toolStripButtonSearchProvider});
+            this.toolStrip5.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip5.Name = "toolStrip5";
+            this.toolStrip5.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip5.TabIndex = 7;
+            this.toolStrip5.Text = "toolStrip5";
+            // 
             // toolStripButtonAddProvider
             // 
             this.toolStripButtonAddProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -637,6 +526,53 @@ namespace ASPController_PC
             this.toolStripButtonSearchProvider.Name = "toolStripButtonSearchProvider";
             this.toolStripButtonSearchProvider.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchProvider.Text = "toolStripButton4";
+            // 
+            // dataGridViewProviders
+            // 
+            this.dataGridViewProviders.AllowUserToAddRows = false;
+            this.dataGridViewProviders.AllowUserToDeleteRows = false;
+            this.dataGridViewProviders.AllowUserToOrderColumns = true;
+            this.dataGridViewProviders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProviders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProviders.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewProviders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProviders.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewProviders.Name = "dataGridViewProviders";
+            this.dataGridViewProviders.ReadOnly = true;
+            this.dataGridViewProviders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProviders.ShowEditingIcon = false;
+            this.dataGridViewProviders.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewProviders.TabIndex = 6;
+            // 
+            // tabPageStores
+            // 
+            this.tabPageStores.Controls.Add(this.toolStrip6);
+            this.tabPageStores.Controls.Add(this.dataGridViewStores);
+            this.tabPageStores.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStores.Name = "tabPageStores";
+            this.tabPageStores.Size = new System.Drawing.Size(792, 424);
+            this.tabPageStores.TabIndex = 5;
+            this.tabPageStores.Text = "Склады";
+            this.tabPageStores.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip6
+            // 
+            this.toolStrip6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip6.AutoSize = false;
+            this.toolStrip6.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddStore,
+            this.toolStripButtonDelStore,
+            this.toolStripButtonUpdateStore,
+            this.toolStripButtonSearchStore});
+            this.toolStrip6.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip6.Name = "toolStrip6";
+            this.toolStrip6.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip6.TabIndex = 9;
+            this.toolStrip6.Text = "toolStrip6";
             // 
             // toolStripButtonAddStore
             // 
@@ -676,6 +612,53 @@ namespace ASPController_PC
             this.toolStripButtonSearchStore.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchStore.Text = "toolStripButton4";
             // 
+            // dataGridViewStores
+            // 
+            this.dataGridViewStores.AllowUserToAddRows = false;
+            this.dataGridViewStores.AllowUserToDeleteRows = false;
+            this.dataGridViewStores.AllowUserToOrderColumns = true;
+            this.dataGridViewStores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStores.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewStores.Name = "dataGridViewStores";
+            this.dataGridViewStores.ReadOnly = true;
+            this.dataGridViewStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStores.ShowEditingIcon = false;
+            this.dataGridViewStores.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewStores.TabIndex = 8;
+            // 
+            // tabPageUsersBD
+            // 
+            this.tabPageUsersBD.Controls.Add(this.toolStrip7);
+            this.tabPageUsersBD.Controls.Add(this.dataGridViewUsersBD);
+            this.tabPageUsersBD.Location = new System.Drawing.Point(4, 22);
+            this.tabPageUsersBD.Name = "tabPageUsersBD";
+            this.tabPageUsersBD.Size = new System.Drawing.Size(792, 424);
+            this.tabPageUsersBD.TabIndex = 6;
+            this.tabPageUsersBD.Text = "Пользователи";
+            this.tabPageUsersBD.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip7
+            // 
+            this.toolStrip7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip7.AutoSize = false;
+            this.toolStrip7.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddUsersBD,
+            this.toolStripButtonDelUsersBD,
+            this.toolStripButtonUpdateUsersBD,
+            this.toolStripButtonSearchUsersBD});
+            this.toolStrip7.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip7.Name = "toolStrip7";
+            this.toolStrip7.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip7.TabIndex = 11;
+            this.toolStrip7.Text = "toolStrip7";
+            // 
             // toolStripButtonAddUsersBD
             // 
             this.toolStripButtonAddUsersBD.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -713,6 +696,25 @@ namespace ASPController_PC
             this.toolStripButtonSearchUsersBD.Name = "toolStripButtonSearchUsersBD";
             this.toolStripButtonSearchUsersBD.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchUsersBD.Text = "toolStripButton4";
+            // 
+            // dataGridViewUsersBD
+            // 
+            this.dataGridViewUsersBD.AllowUserToAddRows = false;
+            this.dataGridViewUsersBD.AllowUserToDeleteRows = false;
+            this.dataGridViewUsersBD.AllowUserToOrderColumns = true;
+            this.dataGridViewUsersBD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewUsersBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUsersBD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewUsersBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsersBD.Location = new System.Drawing.Point(0, 31);
+            this.dataGridViewUsersBD.Name = "dataGridViewUsersBD";
+            this.dataGridViewUsersBD.ReadOnly = true;
+            this.dataGridViewUsersBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUsersBD.ShowEditingIcon = false;
+            this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
+            this.dataGridViewUsersBD.TabIndex = 10;
             // 
             // FormBase
             // 

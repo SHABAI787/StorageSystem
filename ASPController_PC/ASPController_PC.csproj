@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPerson.Designer.cs">
+      <DependentUpon>FormAddPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAuthorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddPerson.resx">
+      <DependentUpon>FormAddPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
     </EmbeddedResource>

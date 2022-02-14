@@ -125,7 +125,6 @@ namespace ASPController_PC
                 }
                 var first = delItems.First();
                 first.Delete(delItems, eventHandler);
-
                 if (!string.IsNullOrEmpty(first.GetDelException()))
                     MessageBox.Show(first.GetDelException());
             }
@@ -166,6 +165,16 @@ namespace ASPController_PC
         private void toolStripButtonDelUsersBD_Click(object sender, EventArgs e)
         {
             DeleteItem<UserBD>(dataGridViewUsersBD, toolStripButtonUpdateUsersBD_Click);
+        }
+
+        private void toolStripButtonAddPerson_Click(object sender, EventArgs e)
+        {
+            new FormAddOrEditPerson().Show();
+        }
+
+        private void dataGridViewPersons_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormAddOrEditPerson((Person)dataGridViewPersons.SelectedRows[0].DataBoundItem).Show();
         }
     }
 }
