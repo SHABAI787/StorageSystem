@@ -696,7 +696,7 @@ namespace ASPController.Controllers
                     if(user == null)
                         res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((string.Empty, string.Empty, "Не верный логин или пароль")));
                     else
-                        res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((user.Login, user.Person?.Name, string.Empty)));
+                        res = await Task.Factory.StartNew(() => JsonConvert.SerializeObject((user.Login, user.Person?.Id, string.Empty)));
                 }
             }
             catch (Exception ex)

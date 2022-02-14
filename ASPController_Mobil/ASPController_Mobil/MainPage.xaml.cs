@@ -53,7 +53,7 @@ namespace ASPController_Mobil
         public const string URL = "http://90.188.45.208/ASPController";
         public static string Exception = string.Empty;
         public static string Login = string.Empty;
-        public static string Name = string.Empty;
+        public static string IdPerson = string.Empty;
 
         public static async Task<bool> StartAuthorization(string login, string password)
         {
@@ -86,13 +86,13 @@ namespace ASPController_Mobil
                 }
 
                 response.Close();
-                var result = await Task.Run(() => JsonConvert.DeserializeObject<(string Login, string Name, string Exception)>(answer));
+                var result = await Task.Run(() => JsonConvert.DeserializeObject<(string Login, string IdPerson, string Exception)>(answer));
 
                 if (!string.IsNullOrEmpty(result.Login))
                 {
                     res = true;
                     Login = result.Login;
-                    Name = result.Name;
+                    IdPerson = result.IdPerson;
                 }
                 else
                     Exception = "Не верный логин или пароль";
