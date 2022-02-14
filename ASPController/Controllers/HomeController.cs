@@ -152,6 +152,37 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> AddOrEditProductState(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<ProductState>(data));
+
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.ProductStates.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.ProductStates.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        itemEdit.Name = itemAddOrEdit.Name;
+                        itemEdit.Description = itemAddOrEdit.Description;
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
+        [HttpPost]
         public async Task<string> GetOrders(string data)
         {
             (List<Order> Orders, string Error) res = (new List<Order>(), "");
@@ -644,6 +675,7 @@ namespace ASPController.Controllers
 
             return res;
         }
+
 
         /// <summary>
         /// Авторизация. Возвращает кортеж (логин, имя, описание ошибки)

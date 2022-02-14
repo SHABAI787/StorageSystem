@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CommonData
 {
@@ -84,6 +85,52 @@ namespace CommonData
             }
 
             return lists;
+        }
+
+        public static async void AddOrEdit(ProductState item)
+        {
+            try
+            {
+                exception = string.Empty;
+                string JSONData = await Task.Run(() => JsonConvert.SerializeObject(item));
+                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/AddOrEditProductState");
+                request.Method = "POST";
+                string query = $"data={JSONData}";
+                byte[] byteMsg = Encoding.UTF8.GetBytes(query);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = byteMsg.Length;
+
+                using (Stream stream = await request.GetRequestStreamAsync())
+                {
+                    await stream.WriteAsync(byteMsg, 0, byteMsg.Length);
+                }
+
+                WebResponse response = await request.GetResponseAsync();
+
+                string answer = null;
+
+                using (Stream s = response.GetResponseStream())
+                {
+                    using (StreamReader sR = new StreamReader(s))
+                    {
+                        answer = await sR.ReadToEndAsync();
+                    }
+                }
+
+                response.Close();
+                var result = await Task.Run(() => JsonConvert.DeserializeObject<string>(answer));
+
+                if (!string.IsNullOrEmpty(result))
+                    exception = result;
+
+            }
+            catch (Exception ex)
+            {
+                exception = ex.Message;
+            }
+
+            if (!string.IsNullOrEmpty(UserBD.GetException()))
+                MessageBox.Show(UserBD.GetException());
         }
     }
 }

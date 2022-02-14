@@ -76,6 +76,12 @@
     <Compile Include="FormAddOrEditPost.Designer.cs">
       <DependentUpon>FormAddOrEditPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddOrEditProductState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddOrEditProductState.Designer.cs">
+      <DependentUpon>FormAddOrEditProductState.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddOrEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAddOrEditPost.resx">
       <DependentUpon>FormAddOrEditPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddOrEditProductState.resx">
+      <DependentUpon>FormAddOrEditProductState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddOrEditStore.resx">
       <DependentUpon>FormAddOrEditStore.cs</DependentUpon>

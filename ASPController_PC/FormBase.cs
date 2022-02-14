@@ -222,5 +222,10 @@ namespace ASPController_PC
         {
             new FormAddOrEditPost((Post)dataGridViewPosts.SelectedRows[0].DataBoundItem).Show();
         }
+
+        private void toolStripButtonAddProductState_Click(object sender, EventArgs e)
+        {
+            new FormAddOrEditProductState().Show();
+        }
     }
 }
