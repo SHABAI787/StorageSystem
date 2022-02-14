@@ -76,11 +76,11 @@
     <Compile Include="FormAddOrEditProduct.Designer.cs">
       <DependentUpon>FormAddOrEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddPerson.cs">
+    <Compile Include="FormAddOeEditPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddPerson.Designer.cs">
-      <DependentUpon>FormAddPerson.cs</DependentUpon>
+    <Compile Include="FormAddOeEditPerson.Designer.cs">
+      <DependentUpon>FormAddOeEditPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAuthorization.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="FormAddOrEditProduct.resx">
       <DependentUpon>FormAddOrEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddPerson.resx">
-      <DependentUpon>FormAddPerson.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddOeEditPerson.resx">
+      <DependentUpon>FormAddOeEditPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>

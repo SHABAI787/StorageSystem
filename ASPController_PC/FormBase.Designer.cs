@@ -460,6 +460,7 @@ namespace ASPController_PC
             this.dataGridViewProducts.ShowEditingIcon = false;
             this.dataGridViewProducts.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewProducts.TabIndex = 4;
+            this.dataGridViewProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
             // 
             // tabPageProviders
             // 

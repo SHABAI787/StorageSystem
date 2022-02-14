@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CommonData
 {
@@ -57,6 +58,7 @@ namespace CommonData
 
         public static async Task<List<Product>> GetProducts()
         {
+            exception = string.Empty;
             List<Product> products = new List<Product>();
             try
             {
@@ -100,7 +102,56 @@ namespace CommonData
                 exception = ex.Message;
             }
 
+            if (!string.IsNullOrEmpty(Product.GetException()))
+                MessageBox.Show(Product.GetException());
+
             return products;
+        }
+
+        public static async void AddOrEdit(Product product)
+        {
+            try
+            {
+                exception = string.Empty;
+                string JSONData = await Task.Run(() => JsonConvert.SerializeObject(product));
+                WebRequest request = WebRequest.Create($"{Authorization.URL}/Home/AddOrEditProducts");
+                request.Method = "POST";
+                string query = $"data={JSONData}";
+                byte[] byteMsg = Encoding.UTF8.GetBytes(query);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = byteMsg.Length;
+
+                using (Stream stream = await request.GetRequestStreamAsync())
+                {
+                    await stream.WriteAsync(byteMsg, 0, byteMsg.Length);
+                }
+
+                WebResponse response = await request.GetResponseAsync();
+
+                string answer = null;
+
+                using (Stream s = response.GetResponseStream())
+                {
+                    using (StreamReader sR = new StreamReader(s))
+                    {
+                        answer = await sR.ReadToEndAsync();
+                    }
+                }
+
+                response.Close();
+                var result = await Task.Run(() => JsonConvert.DeserializeObject<string>(answer));
+
+                if (!string.IsNullOrEmpty(result))
+                    exception = result;
+
+            }
+            catch (Exception ex)
+            {
+                exception = ex.Message;
+            }
+
+            if (!string.IsNullOrEmpty(Product.GetException()))
+                MessageBox.Show(Product.GetException());
         }
 
         public override async void Delete<T>(List<T> dataBoundItems, EventHandler eventHandler)
@@ -145,6 +196,9 @@ namespace CommonData
             {
                 exceptionDel = ex.Message;
             }
+
+            if (!string.IsNullOrEmpty(GetDelException()))
+                MessageBox.Show(GetDelException());
         }
     }
 }

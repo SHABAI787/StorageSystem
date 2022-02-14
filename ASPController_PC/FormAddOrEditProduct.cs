@@ -15,54 +15,60 @@ namespace ASPController_PC
 {
     public partial class FormAddOrEditProduct: Form
     {
-        Person person = null;
-        public FormAddOrEditProduct(Person person = null)
+        Product product = null;
+        public FormAddOrEditProduct(Product product = null)
         {
             InitializeComponent();
-            //dateTimePickerBirth.Value = DateTime.Now;
-            //LoadData();
-            //if(person != null)
-            //{
-            //    this.person = person;
-            //    textBoxLastName.Text = person.LastName;
-            //    textBoxName.Text = person.Name;
-            //    textBoxMiddleName.Text = person.MiddleName;
-            //    dateTimePickerBirth.Value = person.DataBirth == null ? DateTime.Now : person.DataBirth.Value;
-            //    textBoxEmail.Text = person.Email;
-            //    textBoxNumber.Text = person.PhoneNumber;
-                
-            //    this.Text = "Изменение физ.лица";
-            //    button1.Text = "Сохранить изменения";
-            //}
-            //else
-            //{
-            //    this.person = new Person();
-            //}
+            LoadData();
+            if (product != null)
+            {
+                this.product = product;
+                textBoxName.Text = product.Name;
+                richTextBoxDescription.Text = product.Description;
+                textBoxPrice.Text = Convert.ToString(product.Price);
+                this.Text = "Изменение товара";
+                button.Text = "Сохранить изменения";
+            }
+            else
+            {
+                this.product = new Product();
+            }
         }
 
         private async void LoadData()
         {
-            var data = await Post.GetPosts();
-            comboBoxPost.DataSource = new ObservableCollection<Post>(data).ToBindingList();
+            comboBoxState.DataSource = new ObservableCollection<ProductState>(await ProductState.GetStates()).ToBindingList();
+            comboBoxStore.DataSource = new ObservableCollection<Store>(await Store.GetStores()).ToBindingList();
+            comboBoxProvider.DataSource = new ObservableCollection<Provider>(await Provider.GetProviders()).ToBindingList();
             if (!string.IsNullOrEmpty(Post.GetException()))
                 MessageBox.Show(Post.GetException());
             else
             {
-                if (person.Post != null)
-                    comboBoxPost.SelectedItem = comboBoxPost.Items.Cast<Post>().First(p => p.Id == person.Post.Id);
+                if (product.State != null)
+                    comboBoxState.SelectedItem = comboBoxState.Items.Cast<ProductState>().First(p => p.Id == product.State.Id);
+                if (product.Provider != null)
+                    comboBoxProvider.SelectedItem = comboBoxProvider.Items.Cast<Provider>().First(p => p.Id == product.Provider.Id);
+                if (product.Store != null)
+                    comboBoxStore.SelectedItem = comboBoxStore.Items.Cast<Store>().First(p => p.Id == product.Store.Id);
             }
         }
 
-        private void buttonAddPerson_Click(object sender, EventArgs e)
+        private void buttonAddOrEdit_Click(object sender, EventArgs e)
         {
-            //person.LastName = textBoxLastName.Text;
-            //person.Name = textBoxName.Text;
-            //person.MiddleName = textBoxMiddleName.Text;
-            //person.DataBirth = ((DateTime?)dateTimePickerBirth.Value.Date) == ((DateTime?)DateTime.Now.Date) ? null : (DateTime?)dateTimePickerBirth.Value.Date;
-            //person.Email = textBoxEmail.Text;
-            //person.PhoneNumber = textBoxNumber.Text;
-            //person.Post = comboBoxPost.SelectedIndex >= 0 ? (Post)comboBoxPost.SelectedItem : null;
-            //Person.AddOrEditPerson(person);
+            decimal price = 0;
+            if(!decimal.TryParse(textBoxPrice.Text, out price))
+            {
+                MessageBox.Show("Стоимость задана не корректно");
+                return;
+            }
+
+            product.Name = textBoxName.Text;
+            product.Description = richTextBoxDescription.Text;
+            product.Price = price;
+            product.State = comboBoxState.SelectedIndex >= 0 ? (ProductState)comboBoxState.SelectedItem : null;
+            product.Store = comboBoxStore.SelectedIndex >= 0 ? (Store)comboBoxStore.SelectedItem : null;
+            product.Provider = comboBoxProvider.SelectedIndex >= 0 ? (Provider)comboBoxProvider.SelectedItem : null;
+            Product.AddOrEdit(product);
         }
     }
 }

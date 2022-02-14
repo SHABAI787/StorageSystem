@@ -29,91 +29,91 @@ namespace ASPController_PC
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.comboBoxPost = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.comboBoxState = new System.Windows.Forms.ComboBox();
+            this.button = new System.Windows.Forms.Button();
+            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
+            this.comboBoxProvider = new System.Windows.Forms.ComboBox();
+            this.comboBoxStore = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBoxLastName
+            // textBoxName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(24, 22);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(453, 26);
-            this.textBoxLastName.TabIndex = 0;
-            this.textBoxLastName.Text = "Наименование товара";
+            this.textBoxName.Location = new System.Drawing.Point(24, 22);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(453, 26);
+            this.textBoxName.TabIndex = 0;
+            this.textBoxName.Text = "Наименование товара";
             // 
-            // textBoxEmail
+            // textBoxPrice
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(24, 156);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(453, 26);
-            this.textBoxEmail.TabIndex = 5;
-            this.textBoxEmail.Text = "Стоимость";
+            this.textBoxPrice.Location = new System.Drawing.Point(24, 156);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(453, 26);
+            this.textBoxPrice.TabIndex = 5;
+            this.textBoxPrice.Text = "Стоимость";
             // 
-            // comboBoxPost
+            // comboBoxState
             // 
-            this.comboBoxPost.FormattingEnabled = true;
-            this.comboBoxPost.Location = new System.Drawing.Point(24, 221);
-            this.comboBoxPost.Name = "comboBoxPost";
-            this.comboBoxPost.Size = new System.Drawing.Size(450, 27);
-            this.comboBoxPost.TabIndex = 4;
-            this.comboBoxPost.Text = "Состояние";
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.Location = new System.Drawing.Point(24, 221);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxState.TabIndex = 4;
+            this.comboBoxState.Text = "Состояние";
             // 
-            // button1
+            // button
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(24, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(453, 56);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonAddPerson_Click);
+            this.button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button.Location = new System.Drawing.Point(21, 287);
+            this.button.Name = "button";
+            this.button.Size = new System.Drawing.Size(453, 56);
+            this.button.TabIndex = 7;
+            this.button.Text = "Добавить";
+            this.button.UseVisualStyleBackColor = false;
+            this.button.Click += new System.EventHandler(this.buttonAddOrEdit_Click);
             // 
-            // richTextBox1
+            // richTextBoxDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(24, 54);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(453, 96);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "Описание";
+            this.richTextBoxDescription.Location = new System.Drawing.Point(24, 54);
+            this.richTextBoxDescription.Name = "richTextBoxDescription";
+            this.richTextBoxDescription.Size = new System.Drawing.Size(453, 96);
+            this.richTextBoxDescription.TabIndex = 8;
+            this.richTextBoxDescription.Text = "Описание";
             // 
-            // comboBox1
+            // comboBoxProvider
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 188);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(450, 27);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "Поставщик";
+            this.comboBoxProvider.FormattingEnabled = true;
+            this.comboBoxProvider.Location = new System.Drawing.Point(24, 188);
+            this.comboBoxProvider.Name = "comboBoxProvider";
+            this.comboBoxProvider.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxProvider.TabIndex = 9;
+            this.comboBoxProvider.Text = "Поставщик";
             // 
-            // comboBox2
+            // comboBoxStore
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(24, 254);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(450, 27);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.Text = "Склад";
+            this.comboBoxStore.FormattingEnabled = true;
+            this.comboBoxStore.Location = new System.Drawing.Point(24, 254);
+            this.comboBoxStore.Name = "comboBoxStore";
+            this.comboBoxStore.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxStore.TabIndex = 10;
+            this.comboBoxStore.Text = "Склад";
             // 
             // FormAddOrEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(504, 408);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBoxPost);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.textBoxLastName);
+            this.ClientSize = new System.Drawing.Size(504, 355);
+            this.Controls.Add(this.comboBoxStore);
+            this.Controls.Add(this.comboBoxProvider);
+            this.Controls.Add(this.richTextBoxDescription);
+            this.Controls.Add(this.button);
+            this.Controls.Add(this.comboBoxState);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.textBoxName);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -127,12 +127,12 @@ namespace ASPController_PC
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.ComboBox comboBoxPost;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.ComboBox comboBoxState;
+        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.RichTextBox richTextBoxDescription;
+        private System.Windows.Forms.ComboBox comboBoxProvider;
+        private System.Windows.Forms.ComboBox comboBoxStore;
     }
 }

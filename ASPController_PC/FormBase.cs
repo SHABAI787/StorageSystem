@@ -20,17 +20,15 @@ namespace ASPController_PC
             InitializeComponent();
         }
 
-        private async void toolStripButtonAddProduct_Click_1(object sender, EventArgs e)
+        private void toolStripButtonAddProduct_Click_1(object sender, EventArgs e)
         {
-            
+            new FormAddOrEditProduct().Show();
         }
 
         private async void toolStripButtonUpdateProduct_Click(object sender, EventArgs e)
         {
             var products = await Product.GetProducts();
             dataGridViewProducts.DataSource = new ObservableCollection<Product>(products).ToBindingList();
-            if(!string.IsNullOrEmpty(Product.GetException()))
-                MessageBox.Show(Product.GetException());
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,8 +123,6 @@ namespace ASPController_PC
                 }
                 var first = delItems.First();
                 first.Delete(delItems, eventHandler);
-                if (!string.IsNullOrEmpty(first.GetDelException()))
-                    MessageBox.Show(first.GetDelException());
             }
             else
                 MessageBox.Show("Выберите элементы для удаления");
@@ -175,6 +171,11 @@ namespace ASPController_PC
         private void dataGridViewPersons_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             new FormAddOrEditPerson((Person)dataGridViewPersons.SelectedRows[0].DataBoundItem).Show();
+        }
+
+        private void dataGridViewProducts_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormAddOrEditProduct((Product)dataGridViewProducts.SelectedRows[0].DataBoundItem).Show();
         }
     }
 }

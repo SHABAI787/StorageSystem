@@ -55,7 +55,8 @@ namespace ASPController.Controllers
             {
                 using (ContextBD context = new ContextBD())
                 {
-                    res.Products = context.Products.Include("State").Include("Store").Include("Provider").ToList();
+                    res.Products = context.Products.Include("State").Include("Store").Include("Provider")
+                        .Include("Provider.Responsible").Include("Provider.Responsible.Post").ToList();
                 }
             }
             catch (Exception ex)
@@ -64,6 +65,46 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> AddOrEditProducts(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Product>(data));
+                    itemAddOrEdit.State = itemAddOrEdit.State != null ? context.ProductStates.FirstOrDefault(p => p.Id == itemAddOrEdit.State.Id) : null;
+                    itemAddOrEdit.Provider = itemAddOrEdit.Provider != null ? context.Providers.FirstOrDefault(p => p.Id == itemAddOrEdit.Provider.Id) : null;
+                    itemAddOrEdit.Store = itemAddOrEdit.Store != null ? context.Stores.FirstOrDefault(p => p.Id == itemAddOrEdit.Store.Id) : null;
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Products.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Products.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        if (itemEdit != null)
+                        {
+                            itemEdit.Name = itemAddOrEdit.Name;
+                            itemEdit.State = itemAddOrEdit.State;
+                            itemEdit.Store = itemAddOrEdit.Store;
+                            itemEdit.Provider = itemAddOrEdit.Provider;
+                            itemEdit.Price = itemAddOrEdit.Price;
+                            itemEdit.Description = itemAddOrEdit.Description;
+                        }
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
         }
 
         [HttpPost]
@@ -89,6 +130,25 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(error));
+        }
+
+        [HttpPost]
+        public async Task<string> GetStates(string data)
+        {
+            (List<ProductState> Products, string Error) res = (new List<ProductState>(), "");
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    res.Products = context.ProductStates.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+            }
+
+            return await Task.Run(() => JsonConvert.SerializeObject(res));
         }
 
         [HttpPost]
@@ -154,6 +214,45 @@ namespace ASPController.Controllers
             }
 
             return await Task.Run(() => JsonConvert.SerializeObject(res));
+        }
+
+        [HttpPost]
+        public async Task<string> AddOrEditPerson(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Person>(data));
+                    itemAddOrEdit.Post = itemAddOrEdit.Post != null ? context.Posts.FirstOrDefault(p => p.Id == itemAddOrEdit.Post.Id) : null;
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Persons.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        if (itemEdit != null)
+                        {
+                            itemEdit.LastName = itemAddOrEdit.LastName;
+                            itemEdit.Name = itemAddOrEdit.Name;
+                            itemEdit.MiddleName = itemAddOrEdit.MiddleName;
+                            itemEdit.PhoneNumber = itemAddOrEdit.PhoneNumber;
+                            itemEdit.Post = itemAddOrEdit.Post;
+                            itemEdit.Email = itemAddOrEdit.Email;
+                            itemEdit.DataBirth = itemAddOrEdit.DataBirth;
+                        }
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
         }
 
         [HttpPost]
@@ -377,46 +476,6 @@ namespace ASPController.Controllers
 
             return res;
         }
-
-        [HttpPost]
-        public async Task<string> AddOrEditPerson(string data)
-        {
-            string error = string.Empty;
-            try
-            {
-                using (ContextBD context = new ContextBD())
-                {
-                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Person>(data));
-                    itemAddOrEdit.Post = itemAddOrEdit.Post != null ? context.Posts.FirstOrDefault(p => p.Id == itemAddOrEdit.Post.Id) : null;
-                    if (itemAddOrEdit.Id <= 0)
-                    {
-                        context.Persons.Add(itemAddOrEdit);
-                    }
-                    else
-                    {
-                        var itemEdit = context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
-                        if(itemEdit != null)
-                        {
-                            itemEdit.LastName = itemAddOrEdit.LastName;
-                            itemEdit.Name = itemAddOrEdit.Name;
-                            itemEdit.MiddleName = itemAddOrEdit.MiddleName;
-                            itemEdit.PhoneNumber = itemAddOrEdit.PhoneNumber;
-                            itemEdit.Post = itemAddOrEdit.Post;
-                            itemEdit.Email = itemAddOrEdit.Email;
-                            itemEdit.DataBirth = itemAddOrEdit.DataBirth;
-                        }
-                    }
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-            }
-
-            return JsonConvert.SerializeObject(error);
-        }
-
 
         /// <summary>
         /// Авторизация. Возвращает кортеж (логин, имя, описание ошибки)
