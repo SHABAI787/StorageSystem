@@ -57,11 +57,9 @@ namespace ASPController_PC
             this.toolStripButtonAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePerson = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdatePost = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchPost = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProduct = new System.Windows.Forms.ToolStripButton();
@@ -70,15 +68,12 @@ namespace ASPController_PC
             this.toolStripButtonAddProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateProvider = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchProvider = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateStore = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchStore = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelUsersBD = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdateUsersBD = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSearchUsersBD = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPageOrders.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -185,8 +180,7 @@ namespace ASPController_PC
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddPerson,
             this.toolStripButtonDelPerson,
-            this.toolStripButtonUpdatePerson,
-            this.toolStripButtonSearchPerson});
+            this.toolStripButtonUpdatePerson});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(792, 25);
@@ -233,8 +227,7 @@ namespace ASPController_PC
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddPost,
             this.toolStripButtonDelPost,
-            this.toolStripButtonUpdatePost,
-            this.toolStripButtonSearchPost});
+            this.toolStripButtonUpdatePost});
             this.toolStrip4.Location = new System.Drawing.Point(3, 3);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.Size = new System.Drawing.Size(792, 25);
@@ -330,8 +323,7 @@ namespace ASPController_PC
             this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddProvider,
             this.toolStripButtonDelProvider,
-            this.toolStripButtonUpdateProvider,
-            this.toolStripButtonSearchProvider});
+            this.toolStripButtonUpdateProvider});
             this.toolStrip5.Location = new System.Drawing.Point(3, 3);
             this.toolStrip5.Name = "toolStrip5";
             this.toolStrip5.Size = new System.Drawing.Size(792, 25);
@@ -378,8 +370,7 @@ namespace ASPController_PC
             this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddStore,
             this.toolStripButtonDelStore,
-            this.toolStripButtonUpdateStore,
-            this.toolStripButtonSearchStore});
+            this.toolStripButtonUpdateStore});
             this.toolStrip6.Location = new System.Drawing.Point(3, 3);
             this.toolStrip6.Name = "toolStrip6";
             this.toolStrip6.Size = new System.Drawing.Size(792, 25);
@@ -426,8 +417,7 @@ namespace ASPController_PC
             this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddUsersBD,
             this.toolStripButtonDelUsersBD,
-            this.toolStripButtonUpdateUsersBD,
-            this.toolStripButtonSearchUsersBD});
+            this.toolStripButtonUpdateUsersBD});
             this.toolStrip7.Location = new System.Drawing.Point(3, 3);
             this.toolStrip7.Name = "toolStrip7";
             this.toolStrip7.Size = new System.Drawing.Size(792, 25);
@@ -482,6 +472,7 @@ namespace ASPController_PC
             this.toolStripButtonSearchOrder.Name = "toolStripButtonSearchOrder";
             this.toolStripButtonSearchOrder.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchOrder.Text = "toolStripButton4";
+            this.toolStripButtonSearchOrder.Click += new System.EventHandler(this.toolStripButtonSearchOrder_Click);
             // 
             // toolStripButtonAddPerson
             // 
@@ -513,15 +504,6 @@ namespace ASPController_PC
             this.toolStripButtonUpdatePerson.Text = "toolStripButton3";
             this.toolStripButtonUpdatePerson.Click += new System.EventHandler(this.toolStripButtonUpdatePerson_Click);
             // 
-            // toolStripButtonSearchPerson
-            // 
-            this.toolStripButtonSearchPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPerson.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPerson.Name = "toolStripButtonSearchPerson";
-            this.toolStripButtonSearchPerson.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPerson.Text = "toolStripButton4";
-            // 
             // toolStripButtonAddPost
             // 
             this.toolStripButtonAddPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -551,15 +533,6 @@ namespace ASPController_PC
             this.toolStripButtonUpdatePost.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonUpdatePost.Text = "toolStripButton3";
             this.toolStripButtonUpdatePost.Click += new System.EventHandler(this.toolStripButtonUpdatePost_Click);
-            // 
-            // toolStripButtonSearchPost
-            // 
-            this.toolStripButtonSearchPost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchPost.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchPost.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchPost.Name = "toolStripButtonSearchPost";
-            this.toolStripButtonSearchPost.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchPost.Text = "toolStripButton4";
             // 
             // toolStripButtonAddProduct
             // 
@@ -599,6 +572,7 @@ namespace ASPController_PC
             this.toolStripButtonSearchProduct.Name = "toolStripButtonSearchProduct";
             this.toolStripButtonSearchProduct.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearchProduct.Text = "Поиск";
+            this.toolStripButtonSearchProduct.Click += new System.EventHandler(this.toolStripButtonSearchProduct_Click);
             // 
             // toolStripButton1
             // 
@@ -640,15 +614,6 @@ namespace ASPController_PC
             this.toolStripButtonUpdateProvider.Text = "toolStripButton3";
             this.toolStripButtonUpdateProvider.Click += new System.EventHandler(this.toolStripButtonUpdateProvider_Click);
             // 
-            // toolStripButtonSearchProvider
-            // 
-            this.toolStripButtonSearchProvider.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchProvider.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchProvider.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchProvider.Name = "toolStripButtonSearchProvider";
-            this.toolStripButtonSearchProvider.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchProvider.Text = "toolStripButton4";
-            // 
             // toolStripButtonAddStore
             // 
             this.toolStripButtonAddStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -679,15 +644,6 @@ namespace ASPController_PC
             this.toolStripButtonUpdateStore.Text = "toolStripButton3";
             this.toolStripButtonUpdateStore.Click += new System.EventHandler(this.toolStripButtonUpdateStore_Click);
             // 
-            // toolStripButtonSearchStore
-            // 
-            this.toolStripButtonSearchStore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchStore.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchStore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchStore.Name = "toolStripButtonSearchStore";
-            this.toolStripButtonSearchStore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchStore.Text = "toolStripButton4";
-            // 
             // toolStripButtonAddUsersBD
             // 
             this.toolStripButtonAddUsersBD.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -717,15 +673,6 @@ namespace ASPController_PC
             this.toolStripButtonUpdateUsersBD.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonUpdateUsersBD.Text = "toolStripButton3";
             this.toolStripButtonUpdateUsersBD.Click += new System.EventHandler(this.toolStripButtonUpdateUsersBD_Click);
-            // 
-            // toolStripButtonSearchUsersBD
-            // 
-            this.toolStripButtonSearchUsersBD.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSearchUsersBD.Image = global::ASPController_PC.Properties.Resources.icons8_search_more_25;
-            this.toolStripButtonSearchUsersBD.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSearchUsersBD.Name = "toolStripButtonSearchUsersBD";
-            this.toolStripButtonSearchUsersBD.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearchUsersBD.Text = "toolStripButton4";
             // 
             // FormBase
             // 
@@ -795,32 +742,27 @@ namespace ASPController_PC
         private System.Windows.Forms.ToolStripButton toolStripButtonAddPerson;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelPerson;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdatePerson;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSearchPerson;
         private System.Windows.Forms.DataGridView dataGridViewPersons;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddPost;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelPost;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdatePost;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSearchPost;
         private System.Windows.Forms.DataGridView dataGridViewPosts;
         private System.Windows.Forms.ToolStrip toolStrip5;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddProvider;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelProvider;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdateProvider;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSearchProvider;
         private System.Windows.Forms.DataGridView dataGridViewProviders;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStrip toolStrip6;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddStore;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelStore;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdateStore;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSearchStore;
         private System.Windows.Forms.DataGridView dataGridViewStores;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddUsersBD;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelUsersBD;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdateUsersBD;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSearchUsersBD;
         private System.Windows.Forms.DataGridView dataGridViewUsersBD;
     }
 }

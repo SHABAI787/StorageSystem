@@ -227,5 +227,15 @@ namespace ASPController_PC
         {
             new FormAddOrEditProductState().Show();
         }
+
+        private void toolStripButtonSearchOrder_Click(object sender, EventArgs e)
+        {
+            new FormSearch(dataGridViewOrders, Table.Order).Show();
+        }
+
+        private void toolStripButtonSearchProduct_Click(object sender, EventArgs e)
+        {
+            new FormSearch(dataGridViewProducts, Table.Product).Show();
+        }
     }
 }
