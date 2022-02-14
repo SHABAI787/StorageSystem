@@ -192,5 +192,15 @@ namespace ASPController_PC
         {
             new FormAddOrEditUserBD((UserBD)dataGridViewUsersBD.SelectedRows[0].DataBoundItem).Show();
         }
+
+        private void toolStripButtonAddProvider_Click(object sender, EventArgs e)
+        {
+            new FormAddOrEditProvider().Show();
+        }
+
+        private void dataGridViewProviders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormAddOrEditProvider((Provider)dataGridViewProviders.SelectedRows[0].DataBoundItem).Show();
+        }
     }
 }

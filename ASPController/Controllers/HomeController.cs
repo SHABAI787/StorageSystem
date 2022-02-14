@@ -384,6 +384,38 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> AddOrEditProvider(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Provider>(data));
+                    itemAddOrEdit.Responsible = itemAddOrEdit.Responsible != null ? context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Responsible.Id) : null;
+                    
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Providers.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Providers.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        itemEdit.Name = itemAddOrEdit.Name;
+                        itemEdit.Responsible = itemAddOrEdit.Responsible;
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
+        [HttpPost]
         public async Task<string> DelProviders(string data)
         {
             string error = string.Empty;

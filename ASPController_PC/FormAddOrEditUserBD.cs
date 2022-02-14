@@ -18,7 +18,7 @@ namespace ASPController_PC
             if (user != null)
             {
                 this.user = user;
-                textBoxLogin.Text = Convert.ToString(user.Login);
+                textBoxLogin.Text = user.Login;
                 richTextBoxDescription.Text = user.Description;
                 textBoxPassword.Text = user.Password;
                 checkBoxEnable.Checked = user.Enabled;
