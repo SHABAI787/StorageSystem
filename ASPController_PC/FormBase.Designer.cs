@@ -259,6 +259,7 @@ namespace ASPController_PC
             this.dataGridViewPosts.ShowEditingIcon = false;
             this.dataGridViewPosts.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewPosts.TabIndex = 8;
+            this.dataGridViewPosts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewPosts_CellMouseDoubleClick);
             // 
             // tabPageProducts
             // 
@@ -529,6 +530,7 @@ namespace ASPController_PC
             this.toolStripButtonAddPost.Name = "toolStripButtonAddPost";
             this.toolStripButtonAddPost.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonAddPost.Text = "toolStripButton1";
+            this.toolStripButtonAddPost.Click += new System.EventHandler(this.toolStripButtonAddPost_Click);
             // 
             // toolStripButtonDelPost
             // 

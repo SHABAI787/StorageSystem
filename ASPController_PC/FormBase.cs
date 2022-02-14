@@ -212,5 +212,15 @@ namespace ASPController_PC
         {
             new FormAddOrEditStore((Store)dataGridViewStores.SelectedRows[0].DataBoundItem).Show();
         }
+
+        private void toolStripButtonAddPost_Click(object sender, EventArgs e)
+        {
+            new FormAddOrEditPost().Show();
+        }
+
+        private void dataGridViewPosts_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormAddOrEditPost((Post)dataGridViewPosts.SelectedRows[0].DataBoundItem).Show();
+        }
     }
 }

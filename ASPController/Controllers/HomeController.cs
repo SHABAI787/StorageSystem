@@ -340,6 +340,37 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> AddOrEditPost(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Post>(data));
+
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Posts.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Posts.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        itemEdit.Name = itemAddOrEdit.Name;
+                        itemEdit.Description = itemAddOrEdit.Description;
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
+        [HttpPost]
         public async Task<string> DelPosts(string data)
         {
             string error = string.Empty;
