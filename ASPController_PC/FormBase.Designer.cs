@@ -403,6 +403,7 @@ namespace ASPController_PC
             this.dataGridViewStores.ShowEditingIcon = false;
             this.dataGridViewStores.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewStores.TabIndex = 8;
+            this.dataGridViewStores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewStores_CellMouseDoubleClick);
             // 
             // tabPageUsersBD
             // 
@@ -653,6 +654,7 @@ namespace ASPController_PC
             this.toolStripButtonAddStore.Name = "toolStripButtonAddStore";
             this.toolStripButtonAddStore.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonAddStore.Text = "toolStripButton1";
+            this.toolStripButtonAddStore.Click += new System.EventHandler(this.toolStripButtonAddStore_Click);
             // 
             // toolStripButtonDelStore
             // 

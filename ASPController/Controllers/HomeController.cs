@@ -460,6 +460,37 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> AddOrEditStore(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<Store>(data));
+                  
+                    if (itemAddOrEdit.Id <= 0)
+                    {
+                        context.Stores.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        var itemEdit = context.Stores.FirstOrDefault(p => p.Id == itemAddOrEdit.Id);
+                        itemEdit.Name = itemAddOrEdit.Name;
+                        itemEdit.Description = itemAddOrEdit.Description;
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
+        [HttpPost]
         public async Task<string> DelStores(string data)
         {
             string error = string.Empty;

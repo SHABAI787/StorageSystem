@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAddOrEditStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddOrEditStore.Designer.cs">
+      <DependentUpon>FormAddOrEditStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddOrEditProvider.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddOrEditStore.resx">
+      <DependentUpon>FormAddOrEditStore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddOrEditProvider.resx">
       <DependentUpon>FormAddOrEditProvider.cs</DependentUpon>
     </EmbeddedResource>
