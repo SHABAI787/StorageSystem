@@ -449,6 +449,7 @@ namespace ASPController_PC
             this.dataGridViewUsersBD.ShowEditingIcon = false;
             this.dataGridViewUsersBD.Size = new System.Drawing.Size(792, 393);
             this.dataGridViewUsersBD.TabIndex = 10;
+            this.dataGridViewUsersBD.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewUsersBD_CellMouseDoubleClick);
             // 
             // toolStripButtonDeleteOrder
             // 
@@ -688,6 +689,7 @@ namespace ASPController_PC
             this.toolStripButtonAddUsersBD.Name = "toolStripButtonAddUsersBD";
             this.toolStripButtonAddUsersBD.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonAddUsersBD.Text = "toolStripButton1";
+            this.toolStripButtonAddUsersBD.Click += new System.EventHandler(this.toolStripButtonAddUsersBD_Click);
             // 
             // toolStripButtonDelUsersBD
             // 

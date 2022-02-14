@@ -472,6 +472,40 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
+        public async Task<string> AddOrEditUserBD(string data)
+        {
+            string error = string.Empty;
+            try
+            {
+                using (ContextBD context = new ContextBD())
+                {
+                    var itemAddOrEdit = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<UserBD>(data));
+                    itemAddOrEdit.Person = itemAddOrEdit.Person != null ? context.Persons.FirstOrDefault(p => p.Id == itemAddOrEdit.Person.Id) : null;
+                    var itemEditOrNew = context.UsersBD.FirstOrDefault(p => p.Login == itemAddOrEdit.Login);
+                    if (itemEditOrNew == null)
+                    {
+                        context.UsersBD.Add(itemAddOrEdit);
+                    }
+                    else
+                    {
+                        itemEditOrNew.Login = itemAddOrEdit.Login;
+                        itemEditOrNew.Password = itemAddOrEdit.Password;
+                        itemEditOrNew.Description = itemAddOrEdit.Description;
+                        itemEditOrNew.Enabled = itemAddOrEdit.Enabled;
+                        itemEditOrNew.Person = itemAddOrEdit.Person;
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+
+            return JsonConvert.SerializeObject(error);
+        }
+
+        [HttpPost]
         public async Task<string> DelUsersBD(string data)
         {
             string error = string.Empty;

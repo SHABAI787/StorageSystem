@@ -59,7 +59,7 @@ namespace ASPController_PC
             this.comboBoxState.FormattingEnabled = true;
             this.comboBoxState.Location = new System.Drawing.Point(24, 221);
             this.comboBoxState.Name = "comboBoxState";
-            this.comboBoxState.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxState.Size = new System.Drawing.Size(453, 27);
             this.comboBoxState.TabIndex = 4;
             this.comboBoxState.Text = "Состояние";
             // 
@@ -67,7 +67,7 @@ namespace ASPController_PC
             // 
             this.button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button.Location = new System.Drawing.Point(21, 287);
+            this.button.Location = new System.Drawing.Point(24, 287);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(453, 56);
             this.button.TabIndex = 7;
@@ -88,7 +88,7 @@ namespace ASPController_PC
             this.comboBoxProvider.FormattingEnabled = true;
             this.comboBoxProvider.Location = new System.Drawing.Point(24, 188);
             this.comboBoxProvider.Name = "comboBoxProvider";
-            this.comboBoxProvider.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxProvider.Size = new System.Drawing.Size(453, 27);
             this.comboBoxProvider.TabIndex = 9;
             this.comboBoxProvider.Text = "Поставщик";
             // 
@@ -97,7 +97,7 @@ namespace ASPController_PC
             this.comboBoxStore.FormattingEnabled = true;
             this.comboBoxStore.Location = new System.Drawing.Point(24, 254);
             this.comboBoxStore.Name = "comboBoxStore";
-            this.comboBoxStore.Size = new System.Drawing.Size(450, 27);
+            this.comboBoxStore.Size = new System.Drawing.Size(453, 27);
             this.comboBoxStore.TabIndex = 10;
             this.comboBoxStore.Text = "Склад";
             // 
