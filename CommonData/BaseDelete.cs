@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonData
 {
@@ -13,7 +10,7 @@ namespace CommonData
         [NonSerialized]
         protected static string exceptionDel = string.Empty;
         public abstract void Delete<T>(List<T> dataBoundItems, EventHandler eventHandler);
-        
+
         public string GetDelException()
         {
             return exceptionDel;

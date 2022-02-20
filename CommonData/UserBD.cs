@@ -18,7 +18,7 @@ namespace CommonData
     /// </summary>
     [Serializable]
     [Table("UsersBD")]
-    public class UserBD:BaseDelete
+    public class UserBD : BaseDelete
     {
         [Key]
         [DisplayName("Логин")]
@@ -30,9 +30,9 @@ namespace CommonData
 
         [NotMapped]
         [DisplayName("Пароль")]
-        public string PasswordView 
-        { 
-            get { return string.IsNullOrEmpty(Password) ? "" :  string.Concat(Password.Select(s => "*")); }
+        public string PasswordView
+        {
+            get { return string.IsNullOrEmpty(Password) ? "" : string.Concat(Password.Select(s => "*")); }
         }
 
         [DisplayName("Физ. лицо")]

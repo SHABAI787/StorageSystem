@@ -1,14 +1,9 @@
 ﻿using CommonData;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ASPController_PC
@@ -21,7 +16,7 @@ namespace ASPController_PC
             InitializeComponent();
             dateTimePickerBirth.Value = DateTime.Now;
             LoadData();
-            if(person != null)
+            if (person != null)
             {
                 this.person = person;
                 textBoxLastName.Text = person.LastName;
@@ -30,7 +25,7 @@ namespace ASPController_PC
                 dateTimePickerBirth.Value = person.DataBirth == null ? DateTime.Now : person.DataBirth.Value;
                 textBoxEmail.Text = person.Email;
                 textBoxNumber.Text = person.PhoneNumber;
-                
+
                 this.Text = "Изменение физ.лица";
                 button1.Text = "Сохранить изменения";
             }

@@ -139,7 +139,6 @@ namespace ASPController_PC
             this.Name = "FormAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система хранения - Авторизация";
-            this.Load += new System.EventHandler(this.FormAuthorization_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -1,9 +1,5 @@
 ﻿using CommonData;
 using System;
-using System.Collections.ObjectModel;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ASPController_PC

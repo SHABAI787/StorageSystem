@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace CommonData
     /// </summary>
     [Serializable]
     [Table("Stores")]
-    public class Store:BaseDelete
+    public class Store : BaseDelete
     {
         [Browsable(false)]
         [DisplayName("Идентификатор")]

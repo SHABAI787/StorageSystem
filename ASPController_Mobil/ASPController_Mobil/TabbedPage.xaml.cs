@@ -68,7 +68,7 @@ namespace ASPController_Mobil
         {
             ProductsSourse = new List<Product>(products);
             if(listView != null)
-                this.StackL.Children.Remove(listView);
+                this.StackL.Children.RemoveAt(1);
 
             listView = new ListView
             {
@@ -137,7 +137,6 @@ namespace ASPController_Mobil
                     order.Quantity = 1;
                     order.Person = new Person() { Id = int.Parse(Authorization.IdPerson) };
                     Order.AddOrEdit(order);
-                    await DisplayAlert("Уведомление", "Оформляем бронь", "OK");
                     await DisplayAlert("Уведомление", "Оформляем заказ", "OK");
                 }
             }

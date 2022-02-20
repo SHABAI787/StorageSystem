@@ -45,21 +45,5 @@ namespace ASPController_PC
                   }
               });
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormAuthorization_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
-
-    [Serializable]
-    public class TestData
-    {
-        public string Name { get; set; }
     }
 }

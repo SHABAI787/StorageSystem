@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace CommonData
     /// </summary>
     [Serializable]
     [Table("Orders")]
-    public class Order: BaseDelete
+    public class Order : BaseDelete
     {
         [Browsable(false)]
         [DisplayName("Идентификатор")]
@@ -28,7 +27,7 @@ namespace CommonData
 
         [DisplayName("Товар")]
         public virtual Product Product { get; set; }
-        
+
         [DisplayName("Состояние")]
         public virtual ProductState State { get; set; }
 

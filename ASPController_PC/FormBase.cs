@@ -2,13 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ASPController_PC
@@ -36,13 +31,13 @@ namespace ASPController_PC
             TabControl tabControl = sender as TabControl;
             switch (tabControl.SelectedTab.Name)
             {
-                case "tabPageOrders":  break;
-                case "tabPagePersons":  break;
-                case "tabPagePosts":  break;
-                case "tabPageProducts":  break;
-                case "tabPageProviders":  break;
-                case "tabPageStores":  break;
-                case "tabPageUsersBD":  break;
+                case "tabPageOrders": break;
+                case "tabPagePersons": break;
+                case "tabPagePosts": break;
+                case "tabPageProducts": break;
+                case "tabPageProviders": break;
+                case "tabPageStores": break;
+                case "tabPageUsersBD": break;
                 default:
                     break;
             }
@@ -112,7 +107,7 @@ namespace ASPController_PC
                 MessageBox.Show(UserBD.GetException());
         }
 
-        private void DeleteItem<T>(DataGridView dataGridView, EventHandler eventHandler) where T: BaseDelete
+        private void DeleteItem<T>(DataGridView dataGridView, EventHandler eventHandler) where T : BaseDelete
         {
             if (dataGridView.SelectedRows.Count > 0)
             {

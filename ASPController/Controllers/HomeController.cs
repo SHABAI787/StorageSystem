@@ -19,35 +19,6 @@ namespace ASPController.Controllers
         }
 
         [HttpPost]
-        public async Task<string> Hello(string name)
-        {
-            string userNmae = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<string>(name));
-            return await Task.Factory.StartNew(() => JsonConvert.SerializeObject($"Hello {userNmae}"));
-        }
-
-        [HttpPost]
-        public async Task<string> AddUserBD(string userBD)
-        {
-            string res = string.Empty;
-            try
-            {
-                using (ContextBD context = new ContextBD())
-                {
-                    UserBD user = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<UserBD>(userBD));
-                    context.UsersBD.Add(user);
-                    context.SaveChanges();
-                }
-                res = "Добавлено";
-            }
-            catch (Exception ex)
-            {
-                res = ex.Message;
-            }
-          
-            return await Task.Run(() => JsonConvert.SerializeObject(res));
-        }
-
-        [HttpPost]
         public async Task<string> GetProducts(string data)
         {
             (List<Product> Products, string Error) res = (new List<Product>(), "");

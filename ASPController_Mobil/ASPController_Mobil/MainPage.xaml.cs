@@ -36,16 +36,6 @@ namespace ASPController_Mobil
             else
                 await DisplayAlert("Результат", Authorization.Exception, "ОК");
         }
-
-        private void Editor_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        } 
-        
-        private void Editor_PasswordTextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-        }
     }
 
     public static class Authorization
